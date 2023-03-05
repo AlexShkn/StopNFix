@@ -1,0 +1,130 @@
+@use 'sass:math';
+//<МИКСИНЫ>======================================================
+@import 'base/mixins';
+//<МИКСИНЫ>======================================================
+
+//<ШРИФТЫ>=======================================================
+//<Подключаем шрифты>============================================
+//&display=swap&subset=cyrillic-ext
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto+Slab&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap&subset=cyrillic-ext');
+
+// @import 'base/fonts';
+//</Подключаем шрифты>===========================================
+
+//<Шрифт по умолчанию>===========================================
+$fontFamily: 'Roboto';
+$fontSize: 14px;
+//</Шрифт по умолчанию>==========================================
+
+//</ШРИФТЫ>======================================================
+
+//<ПЕРЕМЕННЫЕ>===================================================
+$mainColor: #3d3d3d;
+
+@import 'variables';
+//===============================================================
+
+$minWidth: 320px;
+$maxWidth: 1280;
+$maxWidthContainer: 1140; // прибавить 30 padding
+$containerPadding: 15;
+
+$pc: ($maxWidthContainer + $containerPadding) + px;
+$tablet: 991.98 + px;
+$mobile: 767.98 + px;
+$mobileSmall: 479.98 + px;
+
+//</ПЕРЕМЕННЫЕ>==================================================
+
+//<ОБНУЛЕНИЕ>===================================
+@import 'base/null';
+//</ОБНУЛЕНИЕ>==================================
+
+//<ОБОЛОЧКА>=====================================================
+
+html {
+	scroll-behavior: smooth;
+}
+
+body._lock {
+	overflow: hidden;
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+}
+
+.header_hidden {
+	transform: translateY(-100%);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	clip: rect(0 0 0 0);
+}
+
+.go-to-top {
+	position: fixed;
+	bottom: 10%;
+	right: 3%;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	transform: rotate(-90deg);
+	background: #3b3a63 url('@img/icons/arrow-right.svg') center center no-repeat;
+	transition: background-color 0.3s ease 0s;
+	cursor: pointer;
+	display: none;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #45415c;
+		}
+	}
+}
+//</ОБОЛОЧКА>===================================================
+
+//<ОСНОВНАЯ СЕТКА>==============================================
+[class*='__container'] {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+[class*='__inner-container'] {
+	max-width: 1060px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+//</ОСНОВНАЯ СЕТКА>=============================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>===============
+@import 'header';
+//===========MAIN===============================================
+// @import './parts/main-slider';
+//===========MAIN===============================================
+@import 'footer';
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>==============
+
+//<ОСНОВНОЙ БЛОК>===============================================
+
+@import 'base';
+@import 'global';
+
+.page {
+	flex: 1 1 auto;
+	position: relative;
+	top: 75px;
+}
+
+//==============================================================

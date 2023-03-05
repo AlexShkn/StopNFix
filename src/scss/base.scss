@@ -1,0 +1,62 @@
+//====================================================================
+// Menu
+@import 'base/menu';
+
+// Стили input
+@import 'base/input';
+
+// Preloader
+@import 'base/preloader';
+
+// Стили checkbox
+// @import "base/checkbox";
+
+// Стили spoller
+// @import 'base/spoller';
+
+// Dropdown
+// @import 'base/dropdown';
+
+// Стили dropdownMini
+// @import 'base/dropdownMini';
+
+// Стили spollerCustom
+// @import 'base/spollerCustom';
+
+// Стили tabs
+// @import 'base/modal';
+
+// Стили tabs
+// @import 'base/tabs';
+
+// Стили filterDropdown
+// @import 'base/filterDropdown';
+
+// Анимация
+// @import 'base/animate';
+
+//==============================SWIPER=============================
+// Стили slider
+//snipper :slider
+// @import "base/slider";
+
+// Стили gallery
+//snippet: gallery
+// @import "base/gallery";
+//====================================================================
+//====================================================================
+
+// Стили для отзывчивых картинок (IBG)
+// Сниппет (HTML): ibg (div c картинкой и классами)
+// Сниппет (HTML): ibga (a c картинкой и классами)
+// [class*='__image-ibg'] {
+// 	position: relative;
+// 	img {
+// 		position: absolute;
+// 		width: 100%;
+// 		height: 100%;
+// 		top: 0;
+// 		left: 0;
+// 		object-fit: cover;
+// 	}
+// }

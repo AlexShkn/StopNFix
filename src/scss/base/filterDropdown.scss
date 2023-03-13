@@ -151,6 +151,20 @@
 			pointer-events: all;
 			transform: translateY(5px);
 		}
+		&::-webkit-scrollbar-track {
+			border-radius: 10px;
+			background-color: #fff;
+		}
+
+		&::-webkit-scrollbar {
+			width: 6px;
+			background-color: #fff;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			background-color: rgba(130, 130, 130, 0.8);
+		}
 	}
 	// .block-filter__item
 	&__item {

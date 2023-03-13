@@ -36,7 +36,7 @@ const closeModal = () => {
 				el.classList.remove('show')
 				disabledScroll()
 			}
-			if (!e.target.closest('.modal__content')) {
+			if (!e.target.closest('[modal-content]')) {
 				el.classList.remove('show')
 				disabledScroll()
 			}

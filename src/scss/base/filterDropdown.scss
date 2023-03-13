@@ -180,5 +180,8 @@
 				color: var(--color-accent);
 			}
 		}
+		@media (max-width: $tablet) {
+			font-size: 14px;
+		}
 	}
 }

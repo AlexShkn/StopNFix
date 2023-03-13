@@ -1,0 +1,37 @@
+.link-hover {
+	transition: color 0.3s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--color-accent);
+		}
+	}
+}
+
+._current {
+	color: var(--color-accent);
+}
+
+.button {
+	padding-top: 11px;
+	padding-bottom: 11px;
+	background: #27ace2;
+	border-radius: 4px;
+	font-family: 'Roboto Condensed';
+	font-weight: 700;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #ffffff;
+	border: 1px solid var(--color-accent);
+	transition: all 0.3s ease 0s;
+	&:active {
+		transform: scale(0.95);
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--color-accent);
+			background-color: #fff;
+		}
+	}
+}

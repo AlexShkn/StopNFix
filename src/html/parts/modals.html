@@ -1,0 +1,54 @@
+<div data-modal-filter modal class="modal-filter fade">
+	<div class="modal-filter__dialog">
+		<div class="modal-filter__content ">
+			<a data-modal-close href="#" class="modal-filter__close">
+				<svg class="icon">
+					<use xlink:href="@img/sprite.svg#close"></use>
+				</svg>
+			</a>
+		</div>
+	</div>
+</div>
+<!-- ==================================================================== -->
+
+
+<div data-modal-callback modal class="modal-callback fade">
+	<div class="modal-callback__dialog">
+		<div class="modal-callback__content">
+			<a data-close href="#" class="modal-callback__close">
+				<svg class="icon">
+					<use xlink:href="@img/sprite.svg#close">
+					</use>
+				</svg>
+			</a>
+			<h3 class="modal-callback__title">Введите Ваши контактные данные</h3>
+			<form class="modal-callback-form">
+				<label class="modal-callback-form__label">Ваше имя:*</label>
+				<input type="text" name="name" class="modal-callback-form__input" placeholder="Ваше имя">
+
+				<label class="modal-callback__label">Ваш телефон: *</label>
+				<input autocomplete="off" type="tel" name="phone" data-value="Телефон" class="modal-callback-form__input"
+					placeholder="(0__).__.__.__">
+				<button data-btn-thanks data-btn-close type="submit" class="modal-callback-form__button button">Записаться на
+					ремонт</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- ==================================================================== -->
+
+<div data-modal-thanks modal class="modal-thanks fade">
+	<div class="modal-thanks__dialog">
+		<div class="modal-thanks__content">
+			<a data-modal-close href="#" class="modal-thanks__close">
+				<svg class="icon">
+					<use xlink:href="@img/sprite.svg#close"></use>
+				</svg>
+			</a>
+			<h3 class="modal-thanks__title">Спасибо!</h3>
+			<h3 class="modal-thanks__subtitle">Мастер свяжется с Вами в самое ближайшее время.</h3>
+			<button data-btn-close class="modal-thanks__button button">ОК</button>
+		</div>
+	</div>
+</div>

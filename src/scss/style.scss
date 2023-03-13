@@ -26,8 +26,8 @@ $mainColor: #3d3d3d;
 
 $minWidth: 320px;
 $maxWidth: 1280;
-$maxWidthContainer: 1140; // прибавить 30 padding
-$containerPadding: 15;
+$maxWidthContainer: 1150; // прибавить 30 padding
+$containerPadding: 20;
 
 $pc: ($maxWidthContainer + $containerPadding) + px;
 $tablet: 991.98 + px;
@@ -74,37 +74,18 @@ body._lock {
 	clip: rect(0 0 0 0);
 }
 
-.go-to-top {
-	position: fixed;
-	bottom: 10%;
-	right: 3%;
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	transform: rotate(-90deg);
-	background: #3b3a63 url('@img/icons/arrow-right.svg') center center no-repeat;
-	transition: background-color 0.3s ease 0s;
-	cursor: pointer;
-	display: none;
-	@media (any-hover: hover) {
-		&:hover {
-			background-color: #45415c;
-		}
-	}
-}
 //</ОБОЛОЧКА>===================================================
 
 //<ОСНОВНАЯ СЕТКА>==============================================
 [class*='__container'] {
 	max-width: $maxWidthContainer + px;
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 0 $containerPadding + px;
 }
 
 [class*='__inner-container'] {
 	max-width: 1060px;
 	margin: 0 auto;
-	padding: 0 15px;
 }
 //</ОСНОВНАЯ СЕТКА>=============================================
 

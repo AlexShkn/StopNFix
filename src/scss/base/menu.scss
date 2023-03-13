@@ -5,13 +5,14 @@
 		flex: 0 0 auto;
 	}
 	&__body {
+		flex: 1 1 auto;
 		@media (max-width: $mobile) {
 			position: fixed;
 			width: 100%;
 			height: 100%;
 			left: 0;
 			top: 0;
-			padding: 65px 0 20px;
+			padding: 60px 15px 20px;
 			overflow: auto;
 			text-align: center;
 			background-color: #ffffff;
@@ -25,8 +26,10 @@
 				left: 0;
 				top: 0;
 				width: 100%;
-				height: 65px;
-				background-color: #fff; // накладка на header
+				height: 60px;
+				background: #27ace2;
+				box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
+				z-index: 11;
 			}
 			&._active {
 				opacity: 1;
@@ -38,62 +41,64 @@
 
 	&__list {
 		display: flex;
-		justify-content: center;
-		gap: 54px;
+		@include adaptiveValue('gap', 41, 20, 1);
 		li {
 			display: inline-flex;
 			align-items: center;
-		}
-		@media (max-width: 1080px) {
-			gap: 40px;
 		}
 
 		@media (max-width: $mobile) {
 			display: flex;
 			flex-direction: column;
-			text-align: left;
+			justify-content: center;
+			align-items: center;
 			gap: 0;
-			padding-top: 20px;
+			padding-top: 28px;
 			padding-left: 31px;
 
 			li {
 				&:not(:last-child) {
-					margin-bottom: 21px;
+					margin-bottom: 23px;
 				}
 			}
 		}
 	}
 	&__link {
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 400;
-		color: var(--color-main); //ЦВЕТ ПУНКТОВ МЕНЮ
+		color: var(--color-link); //ЦВЕТ ПУНКТОВ МЕНЮ
 		transition: color 0.3s ease 0s;
 		&._active {
-			color: #565665;
+			color: var(--color-accent);
 		}
-		@media (any-hover: hover) {
-			&:hover {
-				color: var(--color-accent);
-			}
-		}
-
-		@media (max-width: 1080px) {
-			font-size: 14px;
-		}
-
 		@media (max-width: $mobile) {
-			font-weight: 700;
 			font-size: 16px;
-			line-height: 19px;
+		}
+	}
+	// .menu__adrress
+
+	&__address {
+		font-size: 13px;
+		line-height: math.div(15, 13);
+		color: var(--color-link);
+		span {
+			font-weight: 500;
+		}
+		@media (max-width: $tablet) {
+			font-size: 11px;
+		}
+		@media (max-width: $mobile) {
+			display: none;
 		}
 	}
 }
+
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
 		display: block;
 		position: absolute;
-		right: 8px;
+		left: 0;
 		top: 50%;
 		transform: translateY(-50%);
 		width: 22px;
@@ -108,7 +113,7 @@
 			width: 100%;
 			height: 2px;
 			border-radius: 25px;
-			background-color: #00728f; // цвет бургера
+			background-color: #374561; // цвет бургера
 			&:first-child {
 				top: 0px;
 			}
@@ -118,8 +123,21 @@
 			}
 		}
 		&._active {
+			&::before {
+				content: 'закрыть';
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 30px;
+				width: 70px;
+				font-family: 'Roboto Condensed';
+				font-weight: 700;
+				font-size: 16px;
+				text-transform: uppercase;
+				color: #ffffff;
+			}
 			span {
-				background-color: #000;
+				background-color: #ffffff;
 
 				transform: scale(0);
 				&:first-child {

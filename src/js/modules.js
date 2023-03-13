@@ -62,3 +62,14 @@ export let _slideToggle = (target, duration = 500) => {
 		return _slideUp(target, duration)
 	}
 }
+
+export const throttle = (func, ms) => {
+	let locked = false
+	return () => {
+		if (locked) return
+		setTimeout(() => {
+			func()
+			locked = false
+		}, ms)
+	}
+}

@@ -1,17 +1,30 @@
 import { throttle } from './../modules.js'
 
-const goTop = document.querySelector('.go-to-top')
+const backToTopButton = document.querySelector('#back-to-top-btn')
 
-const showGoTopButton = () => {
-	if (window.pageYOffset >= 800) {
-		goTop.style.display = 'block'
-	} else {
-		goTop.style.display = 'none'
+if (backToTopButton) {
+	document.addEventListener('scroll', throttle(scrollFunction, 64))
+
+	function scrollFunction() {
+		if (window.pageYOffset > 300) {
+			if (!backToTopButton.classList.contains('btnEntrance')) {
+				backToTopButton.classList.remove('btnExit')
+				backToTopButton.classList.add('btnEntrance')
+				backToTopButton.style.display = 'block'
+			}
+		} else {
+			if (backToTopButton.classList.contains('btnEntrance')) {
+				backToTopButton.classList.remove('btnEntrance')
+				backToTopButton.classList.add('btnExit')
+				setTimeout(function () {
+					backToTopButton.style.display = 'none'
+				}, 250)
+			}
+		}
 	}
-}
 
-document.addEventListener('scroll', throttle(showGoTopButton, 64))
-goTop.addEventListener('click', e => {
-	e.preventDefault()
-	window.scrollTo(0, 0)
-})
+	backToTopButton.addEventListener('click', e => {
+		e.preventDefault()
+		window.scrollTo(0, 0)
+	})
+}

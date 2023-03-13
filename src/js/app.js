@@ -33,11 +33,15 @@ import './components/headerSticky.js'
 //====================================================================
 
 // DropDownMini
-// import './components/dropdownMini.js'
+import './components/dropdownMini.js'
+//====================================================================
+
+// DropDownMenu
+import './components/dropdownMenu.js'
 //====================================================================
 
 //Modal
-// import './components/modal.js'
+import './components/modal.js'
 //====================================================================
 
 //Spoller
@@ -48,11 +52,11 @@ import './components/headerSticky.js'
 //====================================================================
 
 //filterDropdown
-// import './components/filterDropdown.js'
+import './components/filterDropdown.js'
 //====================================================================
 
 // Dynamic adaptive
-// import './libs/dynamic_adapt.js'
+import './libs/dynamic_adapt.js'
 //====================================================================
 
 // Scrolling Indicator
@@ -63,7 +67,7 @@ import './components/headerSticky.js'
 //====================================================================
 
 // Go to Top
-// import './components/goToTopButton.js'
+import './components/goToTopButton.js'
 //====================================================================
 
 // Menu Line
@@ -104,3 +108,14 @@ function isWebp() {
 }
 
 isWebp()
+
+// const dropdownItem = document.querySelectorAll('.dropdown__nav-item')
+
+// dropdownItem.forEach(item => {
+// 	item.addEventListener('click', () => {
+// 		dropdownItem.forEach(item => {
+// 			item.classList.remove('_active')
+// 		})
+// 		item.classList.add('_active')
+// 	})
+// })

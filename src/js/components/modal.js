@@ -24,13 +24,13 @@ const openModal = (triggerSelector, modalDataSelector) => {
 }
 
 const closeModal = () => {
-	const modals = document.querySelectorAll('.modal')
+	const modals = document.querySelectorAll('[modal]')
 	if (!modals) return
 	modals.forEach(el => {
 		el.addEventListener('click', e => {
 			if (
-				e.target.closest('.modal__close') ||
-				e.target.closest('.modal-form__button')
+				e.target.closest('[data-modal-close]') ||
+				e.target.closest('[data-btn-close]')
 			) {
 				e.preventDefault()
 				el.classList.remove('show')
@@ -46,6 +46,8 @@ const closeModal = () => {
 
 closeModal()
 
-openModal('[data-btn-measuring]', '[data-modal-measuring]')
+openModal('[data-btn-filter]', '[data-modal-filter]')
+openModal('[data-btn-callback]', '[data-modal-callback]')
+openModal('[data-btn-thanks]', '[data-modal-thanks]')
 
 // openModal('.buttons__button_two', '.modal[data-modal="two"]')

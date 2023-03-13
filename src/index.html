@@ -21,7 +21,14 @@
 		<!-- Footer -->
 		@@include('html/_footer.htm',{})
 
-		<!-- <button class="go-to-top"></button> -->
+
+		@@include('html/parts/modals.html',{})
+
+		<button id="back-to-top-btn">
+			<svg class="icon">
+				<use xlink:href="@img/sprite.svg#double-arrow-up"></use>
+			</svg>
+		</button>
 		<div class="preloader">
 			<div class="sk-chase">
 				<div class="sk-chase-dot"></div>

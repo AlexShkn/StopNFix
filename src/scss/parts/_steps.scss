@@ -18,10 +18,7 @@
 	&__row {
 		display: flex;
 		justify-content: space-between;
-		padding: 0 40px;
-		// display: grid;
-		// grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-		// justify-items: center;
+		padding: 0 10px;
 		gap: 20px;
 		@media (max-width: $tablet) {
 			padding: 0;
@@ -49,15 +46,19 @@
 	&__arrow {
 		position: absolute;
 		bottom: 60%;
-		right: -5%;
+		right: -15%;
 		width: 43px;
 		height: 46px;
 		background: url('@img/steps/arrow-step.svg') center / cover no-repeat;
 		&::before {
-			left: -5px;
+			left: -10px;
 		}
 		&::after {
-			right: -15px;
+			right: -20px;
+		}
+
+		@media (max-width: 1110px) {
+			right: -10%;
 		}
 
 		@media (max-width: $tablet) {
@@ -86,34 +87,34 @@
 		}
 		&:nth-child(1) {
 			&::before {
-				left: -20px;
+				left: -25px;
 			}
 			&::after {
-				left: -35px;
+				left: -40px;
 			}
 		}
 		&:nth-child(2) {
 			&::before {
-				left: -50px;
+				left: -55px;
 			}
 			&::after {
-				display: none;
+				left: -70px;
 			}
 		}
 		&:nth-child(3) {
 			&::before {
-				right: -75px;
+				right: -80px;
 			}
 			&::after {
-				right: -90px;
+				right: -95px;
 			}
 		}
 		&:nth-child(4) {
 			&::before {
-				right: -105px;
+				right: -110px;
 			}
 			&::after {
-				right: -120px;
+				right: -125px;
 			}
 		}
 	}

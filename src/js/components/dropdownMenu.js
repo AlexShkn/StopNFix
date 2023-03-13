@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	closeBtn.forEach(btn =>
 		btn.addEventListener('click', e => {
 			innerList.forEach(list => {
-				list.classList.remove('_show')
+				list.classList.remove('show')
 			})
 			menuBtns.forEach(el => {
 				el.classList.remove('_active')

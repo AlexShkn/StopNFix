@@ -36,6 +36,10 @@
 	}
 }
 
-.show {
-	display: block;
+.section-title {
+	text-align: center;
+	font-weight: 700;
+	@include adaptiveValue('font-size', 36, 26, 1);
+	line-height: math.div(42, 36);
+	color: var(--color-main);
 }

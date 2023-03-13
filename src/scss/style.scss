@@ -59,21 +59,6 @@ body._lock {
 	background-color: #fff;
 }
 
-.header_hidden {
-	transform: translateY(-100%);
-}
-
-.visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	padding: 0;
-	overflow: hidden;
-	border: 0;
-	clip: rect(0 0 0 0);
-}
-
 //</ОБОЛОЧКА>===================================================
 
 //<ОСНОВНАЯ СЕТКА>==============================================
@@ -92,7 +77,8 @@ body._lock {
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>===============
 @import 'header';
 //===========MAIN===============================================
-// @import './parts/main-slider';
+@import './parts/hero';
+@import './parts/steps';
 //===========MAIN===============================================
 @import 'footer';
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>==============
@@ -105,7 +91,26 @@ body._lock {
 .page {
 	flex: 1 1 auto;
 	position: relative;
-	top: 75px;
+	// top: 75px;
 }
 
 //==============================================================
+
+.show {
+	display: block;
+}
+
+.header_hidden {
+	transform: translateY(-100%);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	clip: rect(0 0 0 0);
+}

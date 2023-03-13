@@ -14,12 +14,12 @@ import './components/burger.js'
 //====================================================================
 
 // Header Sticky
-import './components/headerSticky.js'
+// import './components/headerSticky.js'
 //====================================================================
 
 // Swiper
-// import './libs/swiper.js'
-// import './components/swiper/slider.js'
+import './libs/swiper.js'
+import './components/swiper/slider.js'
 // import './components/swiper/gallery.js'
 //====================================================================
 
@@ -109,13 +109,4 @@ function isWebp() {
 
 isWebp()
 
-// const dropdownItem = document.querySelectorAll('.dropdown__nav-item')
-
-// dropdownItem.forEach(item => {
-// 	item.addEventListener('click', () => {
-// 		dropdownItem.forEach(item => {
-// 			item.classList.remove('_active')
-// 		})
-// 		item.classList.add('_active')
-// 	})
-// })
+//====================================================================

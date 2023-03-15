@@ -21,8 +21,15 @@
 	font-size: 14px;
 	text-transform: uppercase;
 	color: #ffffff;
-	border: 1px solid var(--color-accent);
+	border: 2px solid var(--color-accent);
 	transition: all 0.3s ease 0s;
+	&_white {
+		color: var(--color-accent);
+		background-color: #fff;
+		&:hover {
+			color: #fff;
+		}
+	}
 	&:active {
 		transform: scale(0.95);
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -30,8 +37,8 @@
 
 	@media (any-hover: hover) {
 		&:hover {
-			color: var(--color-accent);
-			background-color: #fff;
+			background-color: #0060aa;
+			border-color: #0060aa;
 		}
 	}
 }

@@ -39,6 +39,9 @@
 		flex-direction: column;
 		width: 310px;
 		padding: 10px;
+		@media (max-width: $mobileSmall) {
+			padding: 10px 0;
+		}
 	}
 
 	// .steps__arrow
@@ -141,6 +144,9 @@
 		font-size: 144px;
 		text-transform: uppercase;
 		color: #d4e4ef;
+		@media (max-width: $mobileSmall) {
+			left: 35px;
+		}
 	}
 
 	// .steps__image

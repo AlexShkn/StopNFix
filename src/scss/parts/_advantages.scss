@@ -1,0 +1,117 @@
+.advantages {
+	@include adaptiveValue('padding-top', 55, 23, 1);
+	@include adaptiveValue('padding-bottom', 55, 34, 1);
+	// .advantages__container
+
+	&__container {
+	}
+
+	// .advantages__title
+
+	&__title {
+		@include adaptiveValue('margin-bottom', 20, 7, 1);
+	}
+
+	// .advantages__subtitle
+
+	&__subtitle {
+		@include adaptiveValue('margin-bottom', 45, 14, 1);
+		text-align: center;
+		font-size: 15px;
+		line-height: math.div(18, 15);
+		color: var(--color-main);
+	}
+
+	// .advantages__row
+
+	&__row {
+		display: grid;
+		grid-template-columns: repeat(4, 193px);
+		@include adaptiveValue('margin-bottom', 45, 30, 1);
+		justify-content: space-between;
+		gap: 20px;
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(2, 193px);
+			justify-content: center;
+			column-gap: 60px;
+		}
+		@media (max-width: 576px) {
+			grid-template-columns: repeat(1, 193px);
+		}
+	}
+
+	// .advantages__item
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		max-width: 193px;
+		padding: 0 5px;
+		text-align: center;
+	}
+
+	// .advantages__image
+
+	&__image {
+		margin-bottom: 11px;
+		padding: 32px 45px;
+		position: relative;
+		border-radius: 50%;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 148px;
+			height: 148px;
+			border-radius: 50%;
+			background-color: #f3f8fb;
+		}
+		img {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: 1;
+		}
+	}
+
+	// .advantages__description
+
+	&__description {
+		font-weight: 700;
+		font-size: 15px;
+		line-height: math.div(18, 15);
+		text-align: center;
+		color: var(--color-main);
+	}
+
+	// .advantages__buttons
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 28px;
+		@media (max-width: 576px) {
+			flex-direction: column;
+			gap: 16px;
+		}
+	}
+
+	// .advantages__button
+
+	&__button {
+		&:first-child {
+			padding-right: 29px;
+			padding-left: 29px;
+		}
+		&:last-child {
+			padding-right: 38px;
+			padding-left: 46px;
+		}
+	}
+}

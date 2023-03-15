@@ -1,5 +1,5 @@
 const heroSlider = new Swiper('.hero-slider', {
-	spaceBetween: 28,
+	spaceBetween: 40,
 	slidesPerView: 1,
 	loop: true,
 	speed: 800,
@@ -7,7 +7,7 @@ const heroSlider = new Swiper('.hero-slider', {
 	loopAdditionalSlides: 0,
 	preventInteractionOnTransition: true,
 	autoplay: {
-		delay: 2000,
+		delay: 5000,
 		disableOnInteraction: false,
 	},
 

@@ -29,7 +29,7 @@ import './components/swiper/slider.js'
 //====================================================================
 
 // Tabs
-// import './components/tabs.js'
+import './components/tabs.js'
 //====================================================================
 
 // DropDownMini

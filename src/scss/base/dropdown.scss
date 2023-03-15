@@ -136,12 +136,6 @@
 
 	&__wrapper-list {
 		position: relative;
-		// display: flex;
-		// flex-wrap: wrap;
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		column-gap: 27px;
-		row-gap: 12px;
 		max-width: 1140px;
 		margin: 0 auto;
 		padding: 0 15px;
@@ -153,6 +147,16 @@
 			height: 18px;
 			cursor: pointer;
 		}
+	}
+
+	// .dropdown__body-list
+
+	&__body-list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 27px;
+		row-gap: 12px;
+
 		@media (max-width: $tablet) {
 			grid-template-columns: repeat(3, 1fr);
 		}

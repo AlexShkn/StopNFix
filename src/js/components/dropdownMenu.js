@@ -26,38 +26,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			drop.classList.toggle('_active')
 			currentBtn.classList.toggle('_active')
-			drop.querySelector('.dropdown__inner-nav-list').classList.add('show')
+			drop.querySelector('.dropdown__inner-nav-list').classList.toggle('show')
 		})
 	})
 
-	closeBtn.forEach(btn =>
-		btn.addEventListener('click', e => {
-			innerList.forEach(list => {
-				list.classList.remove('show')
-			})
-			menuBtns.forEach(el => {
-				el.classList.remove('_active')
-			})
-
-			drops.forEach(el => {
-				el.classList.remove('_active')
-			})
-		}),
-	)
+	closeBtn.forEach(btn => btn.addEventListener('click', removeClass))
 
 	document.addEventListener('click', e => {
-		if (!e.target.closest('.dropdown__nav-list')) {
-			innerList.forEach(list => {
-				list.classList.remove('show')
-			})
-
-			menuBtns.forEach(el => {
-				el.classList.remove('_active')
-			})
-
-			drops.forEach(el => {
-				el.classList.remove('_active')
-			})
+		if (!e.target.closest('.dropdown__nav-item')) {
+			removeClass()
 		}
 	})
+
+	function removeClass() {
+		innerList.forEach(list => {
+			list.classList.remove('show')
+		})
+		menuBtns.forEach(el => {
+			el.classList.remove('_active')
+		})
+
+		drops.forEach(el => {
+			el.classList.remove('_active')
+		})
+	}
 })

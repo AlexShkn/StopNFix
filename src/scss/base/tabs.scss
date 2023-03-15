@@ -1,24 +1,36 @@
 // Snippet: tabs
 
 .tabs {
-	padding-bottom: 200px;
 	// .tabs__navigation
 	&__navigation {
 		display: flex;
+		justify-content: center;
+		@include adaptiveValue('gap', 133, 47, 1);
+		padding-bottom: 20px;
+		border-bottom: 1px solid rgba(212, 228, 239, 0.8);
+		margin-bottom: 34px;
 	}
 	// .tabs__title
 	&__title {
-		border: 1px solid #eee;
-		padding: 10px 15px;
-		border-radius: 5px;
+		position: relative;
+		font-weight: 700;
+		@include adaptiveValue('font-size', 30, 21, 1);
+		color: var(--color-main);
 		&._tab-active {
-			border: 1px solid #000;
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: -20px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 120%;
+				height: 4px;
+				background-color: var(--color-accent);
+			}
 		}
 	}
 	// .tabs__content
 	&__content {
-		border: 1px solid #eee;
-		padding: 10px 15px;
 	}
 	// .tabs__body
 	&__body {

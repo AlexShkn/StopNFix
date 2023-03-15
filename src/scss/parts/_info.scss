@@ -1,0 +1,74 @@
+.info {
+	@include adaptiveValue('padding-top', 33, 20, 1);
+	@include adaptiveValue('padding-bottom', 50, 35, 1);
+	background-color: var(--color-section-gray);
+	text-align: center;
+}
+
+.info-stocks {
+	// .info-stocks__content
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 27px;
+		margin-bottom: 40px;
+		text-align: left;
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(1, 1fr);
+			justify-items: center;
+		}
+	}
+
+	// .info-stocks__card
+
+	&__card {
+		position: relative;
+		max-width: 352px;
+		@media (max-width: $mobile) {
+			&:not(:first-child) {
+				display: none;
+			}
+		}
+	}
+	// .info-stocks__image
+
+	&__image {
+		position: relative;
+		z-index: 1;
+		margin-bottom: 18px;
+		overflow: hidden;
+
+		img {
+			transition: all 3s ease-in-out;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			&:hover {
+				transform: scale(1.3);
+			}
+		}
+	}
+
+	// .info-stocks__descr
+
+	&__descr {
+		font-weight: 500;
+		@include adaptiveValue('font-size', 20, 18, 1);
+		line-height: math.div(23, 20);
+		color: #00254a;
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-accent);
+			}
+		}
+	}
+
+	// .info-stocks__link
+
+	&__link {
+		padding-left: 56px;
+		padding-right: 50px;
+	}
+}

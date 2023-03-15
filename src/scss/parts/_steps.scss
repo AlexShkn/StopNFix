@@ -166,6 +166,15 @@
 		line-height: math.div(24, 15);
 		text-align: center;
 		color: var(--color-main);
+		span {
+			cursor: pointer;
+			color: var(--color-accent);
+			@media (any-hover: hover) {
+				&:hover {
+					color: #0060aa;
+				}
+			}
+		}
 	}
 }
 

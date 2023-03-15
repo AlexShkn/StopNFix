@@ -26,8 +26,10 @@
 	&_white {
 		color: var(--color-accent);
 		background-color: #fff;
-		&:hover {
-			color: #fff;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #fff;
+			}
 		}
 	}
 	&:active {

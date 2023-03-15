@@ -10,14 +10,14 @@
 	background-color: #fff;
 	cursor: pointer;
 	outline: none;
-	border: 3px solid var(--color-accent);
+	border: 3px solid rgba(55, 69, 97, 0.3);
 	border-radius: 50%;
 	transition: all 0.3s ease 0s;
 	svg {
 		transition: all 0.3s ease 0s;
 		width: 20px;
 		height: 20px;
-		fill: var(--color-accent);
+		fill: rgba(55, 69, 97, 0.3);
 	}
 	@media (any-hover: hover) {
 		&:hover,

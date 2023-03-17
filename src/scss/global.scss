@@ -56,6 +56,13 @@
 	color: var(--color-main);
 }
 
+.page-title {
+	font-weight: 700;
+	@include adaptiveValue('font-size', 36, 26, 1);
+	line-height: math.div(42, 36);
+	color: var(--color-main);
+}
+
 .header-shadow {
 	box-shadow: 0px 5px 10px rgba(0, 37, 74, 0.1);
 }

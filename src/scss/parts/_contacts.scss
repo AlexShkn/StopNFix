@@ -45,10 +45,6 @@
 
 	&__title {
 		@include adaptiveValue('margin-bottom', 35, 20, 1);
-		font-weight: 700;
-		@include adaptiveValue('font-size', 36, 26, 1);
-		line-height: math.div(42, 36);
-		color: var(--color-main);
 	}
 
 	// .contacts-block__items

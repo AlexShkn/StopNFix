@@ -1,0 +1,118 @@
+.recommendations {
+	padding-bottom: 60px;
+	// .recommendations__container
+
+	&__container {
+	}
+
+	// .recommendations__title
+
+	&__title {
+		margin-bottom: 35px;
+	}
+
+	// .recommendations__button
+
+	&__button {
+		position: relative;
+		display: block;
+		margin: 0px auto;
+		padding-right: 75px;
+		padding-left: 49px;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 43px;
+			width: 17px;
+			height: 17px;
+			background: url('@img/sprite-icons/refresh.svg') center / cover no-repeat;
+		}
+	}
+}
+
+.recommendations-list {
+	display: flex;
+	flex-direction: column;
+	@include adaptiveValue('gap', 55, 20, 1);
+	@include adaptiveValue('margin-bottom', 55, 33, 1);
+	// .recommendations-list__item
+
+	&__item {
+	}
+
+	// .recommendations-list__post
+
+	&__post {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue('gap', 35, 15, 1);
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	// .recommendations-list__image
+
+	&__image {
+		flex: 0 1 48%;
+		@media (max-width: $tablet) {
+			flex: 1 1 100%;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+.recommendations-text-block {
+	width: calc(62% - 35px);
+	padding-top: 25px;
+	@media (max-width: $tablet) {
+		padding-top: 0;
+		width: 100%;
+	}
+	// .recommendations-text-block__heading
+
+	&__heading {
+		margin-bottom: 14px;
+		font-weight: 700;
+		@include adaptiveValue('font-size', 24, 16, 1);
+		line-height: math.div(28, 24);
+		color: var(--color-main);
+	}
+
+	// .recommendations-text-block__date
+
+	&__date {
+		display: inline-block;
+		margin-bottom: 15px;
+		font-size: 15px;
+		color: #84888b;
+	}
+
+	// .recommendations-text-block__text
+
+	&__text {
+		margin-bottom: 13px;
+		font-size: 15px;
+		line-height: math.div(21, 15);
+		color: #333333;
+	}
+
+	// .recommendations-text-block__link
+
+	&__link {
+		font-size: 15px;
+		text-decoration: underline;
+		color: #3999e5;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #0060aa;
+			}
+		}
+	}
+}

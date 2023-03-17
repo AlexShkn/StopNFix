@@ -23,6 +23,9 @@
 	color: #ffffff;
 	border: 2px solid var(--color-accent);
 	transition: all 0.3s ease 0s;
+	&_callback {
+		padding: 10px 28px;
+	}
 	&_white {
 		color: var(--color-accent);
 		background-color: #fff;

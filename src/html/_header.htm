@@ -1,439 +1,374 @@
-<header class="header">
-	<div class="header__wrapper">
-		<div class="header__container">
-			<div class="header__content">
-				<div class="icon-menu">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-				<div class="header__menu menu">
-					<nav class="menu__body">
-						<ul class="menu__list">
-							<li class="menu__item">
-								<a href="#" class="menu__link link-hover _current">О нас</a>
-							</li>
-							<li class="menu__item">
-								<a href="#" class="menu__link link-hover">Отзывы</a>
-							</li>
-							<li class="menu__item">
-								<a href="#" class="menu__link link-hover">Советы по ремонту</a>
-							</li>
-							<li class="menu__item">
-								<a href="#" class="menu__link link-hover">Акции</a>
-							</li>
-							<li class="menu__item">
-								<a href="#" class="menu__link link-hover">Контакты</a>
-							</li>
-						</ul>
-					</nav>
-					<div class="menu__address">г. Киев, ул. Ушинского,4 <span>ПН-ПТ с 10:00 до 20:00</span></div>
-				</div>
-				<button data-dropdown class="header__contacts-icon-button">
-					<svg class="icon">
-						<use xlink:href="@img/sprite.svg#phone"></use>
-					</svg>
-				</button>
-				<div class="header__dropdown-contact dropdown">
-				</div>
-			</div>
+<div class="header__container">
+	<div class="header__content header-content">
+		<div class="icon-menu">
+			<span></span>
+			<span></span>
+			<span></span>
 		</div>
-
-		<div class="header__body">
-			<div class="header__body-container">
-				<div data-da=".header__content, 767.98, 1" class="header__logo ">
-					<a href="#" class="shake-logo">
-						<span>Stop<i>N</i>Fix</span>
-						<div>Ремонт мобильных телефонов</div>
-					</a>
-				</div>
-				<div data-da=".menu__body, 767.98,first" class="header__dropdown dropdown__nav-list">
-					<div class="dropdown__nav-item">
-						<button href="#" class="dropdown__nav-button">Ремонт мобильных телефонов</button>
-						<div class="dropdown__inner-nav-list">
-							<div class="dropdown__wrapper-list">
-								<svg class="icon dropdown-close">
-									<use xlink:href="@img/sprite.svg#close"></use>
-								</svg>
-								<ul class="dropdown__body-list">
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/iphone.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт iPhone</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/htc.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт HTC</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/samsung.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов
-											Samsung Galaxy</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/nokia.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Nokia</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/sony.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Sony</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/motorola.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов
-											Motorola</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/lg.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов LG</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/huawei.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов HUAWEI</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/bb.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов
-											Blackberry</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/vertu.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Vertu</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/meizu.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Meizu</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/zte.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов ZTE</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/lenovo.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Lenovo</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/asus.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Asus</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/oneplus.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов OnePlus</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/google.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Google</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/vivo.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Vivo</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/xiaomi.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Xiaomi</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/acer.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Acer</span>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="dropdown__nav-item">
-						<button href="#" class="dropdown__nav-button">Ремонт планшетов</button>
-						<div class="dropdown__inner-nav-list">
-							<div class="dropdown__wrapper-list">
-								<svg class="icon dropdown-close">
-									<use xlink:href="@img/sprite.svg#close"></use>
-								</svg>
-
-								<ul class="dropdown__body-list">
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/iphone.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт Samsung</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/htc.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт HTC</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/samsung.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов
-											Samsung Galaxy</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/nokia.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Nokia</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/sony.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Sony</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/motorola.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов
-											Motorola</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/lg.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов LG</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/huawei.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов HUAWEI</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/bb.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов
-											Blackberry</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/vertu.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Vertu</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/meizu.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Meizu</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/zte.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов ZTE</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/lenovo.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Lenovo</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/asus.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Asus</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/oneplus.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов OnePlus</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/google.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Google</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/vivo.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Vivo</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/xiaomi.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Xiaomi</span>
-									</li>
-									<li class="dropdown__inner-nav-link">
-										<a href="#"></a>
-										<div class="dropdown__image">
-											<img src="@img/brands/acer.png" alt="">
-										</div>
-										<span class="dropdown__inner-nav-text">Ремонт телефонов Acer</span>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div data-da=".header__dropdown-contact,767.98,1" class="header__contacts header-contacts">
-					<svg class="icon">
-						<use xlink:href="@img/sprite.svg#call-phone"></use>
-					</svg>
-					<div class="header-contacts__wrapper">
-						<ul class="header-contacts__list">
-							<li class="header-contacts__link ">
-								<a class="link-hover" href="tel:+">+38 (066) 452-16-85</a>
-							</li>
-							<li class="header-contacts__link">
-								<a class="link-hover" href="tel:+">+38 (099) 775-65-44</a>
-							</li>
-						</ul>
-						<div class="header-contacts__messengers">
-							<a href="#" class="header-contacts__image">
-								<img src="@img/sprite-icons/viber.svg" alt="">
-							</a>
-							<a href="#" class="header-contacts__image">
-								<img src="@img/sprite-icons/wp-header.svg" alt="">
-							</a>
-						</div>
-					</div>
-
-					<button data-btn-callback type="button" class="header-contacts__button">Записаться на ремонт</button>
-				</div>
-			</div>
+		<div class="header__menu menu">
+			<nav class="menu__body">
+				<ul class="menu__list">
+					<li class="menu__item">
+						<a id="about" href="index.html" class="menu__link link-hover">О нас</a>
+					</li>
+					<li class="menu__item">
+						<a id="reviews" href="#" class="menu__link link-hover">Отзывы</a>
+					</li>
+					<li class="menu__item">
+						<a id="recommendations" href="page-recommendations.html" class="menu__link link-hover">Советы по ремонту</a>
+					</li>
+					<li class="menu__item">
+						<a id="stocks" href="#" class="menu__link link-hover">Акции</a>
+					</li>
+					<li class="menu__item">
+						<a id="contacts" href="page-contacts.html" class="menu__link link-hover">Контакты</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="menu__address">г. Киев, ул. Ушинского,4 <span>ПН-ПТ с 10:00 до 20:00</span></div>
 		</div>
-
-		<div class="header__container">
-			<div class="header__search header-search">
-				<button data-btn-filter type="button" class="header-search__button">Найти свое устройство</button>
-				<div data-da=".modal-filter__content,767.98,last" class="header-search filter">
-					<div class="filter__block block-filter">
-						<div class="block-filter__button">
-							<div class="block-filter__header">
-								<div class="block-filter__type">Выберите устройство</div>
-								<div class="block-filter__icon"></div>
-							</div>
-						</div>
-						<div class="block-filter__dropdown">
-							<div class="block-filter__item">Мобильный телефон</div>
-							<div class="block-filter__item">Планшет</div>
-						</div>
-					</div>
-					<div class="filter__block block-filter">
-						<div class="block-filter__button">
-							<div class="block-filter__header">
-								<div class="block-filter__type">Выберите марку</div>
-								<div class="block-filter__icon"></div>
-							</div>
-						</div>
-						<div class="block-filter__dropdown">
-							<div class="block-filter__item">iPhone</div>
-							<div class="block-filter__item">Samsung</div>
-							<div class="block-filter__item">Xiaomi</div>
-							<div class="block-filter__item">Oppo</div>
-							<div class="block-filter__item">iPhone</div>
-							<div class="block-filter__item">iPhone</div>
-							<div class="block-filter__item">iPhone</div>
-							<div class="block-filter__item">iPhone</div>
-							<div class="block-filter__item">iPhone</div>
-							<div class="block-filter__item">iPhone</div>
-							<div class="block-filter__item">iPhone</div>
-						</div>
-					</div>
-					<div class="filter__block block-filter">
-						<div class="block-filter__button">
-							<div class="block-filter__header">
-								<div class="block-filter__type">Выберите модель</div>
-								<div class="block-filter__icon"></div>
-							</div>
-						</div>
-						<div class="block-filter__dropdown">
-							<div class="block-filter__item">7</div>
-							<div class="block-filter__item">8</div>
-							<div class="block-filter__item">9</div>
-						</div>
-					</div>
-					<div class="filter__btn">
-						<button id="filter-btn">Найти</button>
-						<svg class="icon">
-							<use xlink:href="@img/sprite.svg#arrow"></use>
-						</svg>
-					</div>
-				</div>
-
-			</div>
+		<button data-dropdown class="header__contacts-icon-button">
+			<svg class="icon">
+				<use xlink:href="@img/sprite.svg#phone"></use>
+			</svg>
+		</button>
+		<div class="header__dropdown-contact dropdown">
 		</div>
 	</div>
-</header>
+</div>
+
+<div class="header__body">
+	<div class="header__body-container">
+		<div data-da=".header__content, 767.98, 1" class="header__logo ">
+			<a href="#" class="shake-logo">
+				<span>Stop<i>N</i>Fix</span>
+				<div>Ремонт мобильных телефонов</div>
+			</a>
+		</div>
+		<div data-da=".menu__body, 767.98,first" class="header__dropdown dropdown__nav-list">
+			<div class="dropdown__nav-item">
+				<button href="#" class="dropdown__nav-button">Ремонт мобильных телефонов</button>
+				<div class="dropdown__inner-nav-list">
+					<div class="dropdown__wrapper-list">
+						<svg class="icon dropdown-close">
+							<use xlink:href="@img/sprite.svg#close"></use>
+						</svg>
+						<ul class="dropdown__body-list">
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/iphone.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт iPhone</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/htc.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт HTC</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/samsung.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов
+									Samsung Galaxy</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/nokia.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Nokia</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/sony.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Sony</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/motorola.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов
+									Motorola</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/lg.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов LG</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/huawei.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов HUAWEI</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/bb.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов
+									Blackberry</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/vertu.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Vertu</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/meizu.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Meizu</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/zte.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов ZTE</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/lenovo.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Lenovo</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/asus.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Asus</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/oneplus.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов OnePlus</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/google.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Google</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/vivo.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Vivo</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/xiaomi.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Xiaomi</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/acer.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Acer</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="dropdown__nav-item">
+				<button href="#" class="dropdown__nav-button">Ремонт планшетов</button>
+				<div class="dropdown__inner-nav-list">
+					<div class="dropdown__wrapper-list">
+						<svg class="icon dropdown-close">
+							<use xlink:href="@img/sprite.svg#close"></use>
+						</svg>
+
+						<ul class="dropdown__body-list">
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/iphone.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт Samsung</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/htc.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт HTC</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/samsung.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов
+									Samsung Galaxy</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/nokia.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Nokia</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/sony.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Sony</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/motorola.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов
+									Motorola</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/lg.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов LG</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/huawei.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов HUAWEI</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/bb.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов
+									Blackberry</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/vertu.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Vertu</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/meizu.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Meizu</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/zte.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов ZTE</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/lenovo.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Lenovo</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/asus.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Asus</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/oneplus.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов OnePlus</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/google.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Google</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/vivo.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Vivo</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/xiaomi.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Xiaomi</span>
+							</li>
+							<li class="dropdown__inner-nav-link">
+								<a href="#"></a>
+								<div class="dropdown__image">
+									<img src="@img/brands/acer.png" alt="">
+								</div>
+								<span class="dropdown__inner-nav-text">Ремонт телефонов Acer</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div data-da=".header__dropdown-contact,767.98,1" class="header__contacts header-contacts">
+			<svg class="icon">
+				<use xlink:href="@img/sprite.svg#call-phone"></use>
+			</svg>
+			<div class="header-contacts__wrapper">
+				<ul class="header-contacts__list">
+					<li class="header-contacts__link ">
+						<a class="link-hover" href="tel:+">+38 (066) 452-16-85</a>
+					</li>
+					<li class="header-contacts__link">
+						<a class="link-hover" href="tel:+">+38 (099) 775-65-44</a>
+					</li>
+				</ul>
+				<div class="header-contacts__messengers">
+					<a href="#" class="header-contacts__image">
+						<img src="@img/sprite-icons/viber.svg" alt="">
+					</a>
+					<a href="#" class="header-contacts__image">
+						<img src="@img/sprite-icons/wp-header.svg" alt="">
+					</a>
+				</div>
+			</div>
+
+			<button data-btn-callback type="button" class="header-contacts__button">Записаться на ремонт</button>
+		</div>
+	</div>
+</div>

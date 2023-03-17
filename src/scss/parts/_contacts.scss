@@ -1,0 +1,160 @@
+.contacts {
+	@include adaptiveValue('padding-bottom', 60, 10, 1);
+	// .contacts__container
+
+	&__container {
+		display: flex;
+	}
+
+	// .contacts__contacts-block
+
+	&__contacts-block {
+	}
+
+	// .contacts__image-block
+
+	&__image-block {
+		display: inline-flex;
+		padding-top: 30px;
+		@media (max-width: $mobile) {
+			padding-top: 0;
+			width: 100%;
+		}
+	}
+
+	// .contacts__image
+
+	&__image {
+		max-height: 271px;
+		width: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+.contacts-block {
+	margin-right: 41px;
+	@media (max-width: $mobile) {
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+	// .contacts-block__title
+
+	&__title {
+		@include adaptiveValue('margin-bottom', 35, 20, 1);
+		font-weight: 700;
+		@include adaptiveValue('font-size', 36, 26, 1);
+		line-height: math.div(42, 36);
+		color: var(--color-main);
+	}
+
+	// .contacts-block__items
+
+	&__items {
+		margin-bottom: 27px;
+	}
+
+	// .contacts-block__item
+
+	&__item {
+		padding-top: 5px;
+		position: relative;
+		padding-left: 34px;
+		&:not(:last-child) {
+			margin-bottom: 28px;
+		}
+		svg.icon {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 23px;
+			height: 23px;
+		}
+
+		&:first-child {
+			svg.icon {
+				width: 14px;
+				height: 13px;
+				top: 5px;
+				left: 5px;
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 23px;
+				height: 23px;
+				background: url('@img/contacts-page/icon-time-bg.svg') center / cover
+					no-repeat;
+			}
+		}
+	}
+
+	// .contacts-block__item-line
+
+	&__item-line {
+		font-weight: 700;
+		font-size: 17px;
+		color: #00254a;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+		span {
+			font-weight: 400;
+			text-transform: uppercase;
+		}
+	}
+
+	// .contacts-block__social-list
+
+	&__social-list {
+		display: flex;
+		gap: 20px;
+		margin-bottom: 27px;
+	}
+
+	// .contacts-block__social-item
+
+	&__social-item {
+	}
+
+	// .contacts-block__social-link
+
+	&__social-link {
+		svg.icon {
+			fill: var(--color-accent);
+			width: 20px;
+			height: 20px;
+			transition: all 0.3s ease 0s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-link);
+				svg.icon {
+					fill: var(--color-link);
+				}
+			}
+		}
+	}
+
+	// .contacts-block__address
+
+	&__address {
+		address {
+			color: var(--color-main);
+		}
+	}
+
+	// .contacts-block__subtitle
+
+	&__subtitle {
+		margin-bottom: 23px;
+		font-weight: 700;
+		@include adaptiveValue('font-size', 30, 21, 1);
+		color: var(--color-main);
+	}
+}

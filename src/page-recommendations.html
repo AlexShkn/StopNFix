@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Главная</title>
+	<title>Советы по ремонту</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="description" content="Ремонт телефонов и планшетов любой сложности">
@@ -17,19 +17,18 @@
 		<!-- Header -->
 		<header class="header">
 			@@include('html/_header.htm',{})
-			@@include('html/parts/_header-search.htm',{})
 		</header>
 		<main class="page">
-			<!-- Hero-->
-			@@include('html/_hero.htm',{})
-			<!-- Hero-->
-			@@include('html/_steps.htm',{})
-			<!-- Advantages-->
-			@@include('html/_advantages.htm',{})
+			<div class="bread-crumbs">
+				<div class="bread-crumbs__container">
+					<a href="index.html" class="bread-crumbs__link link-hover">Главная</a>
+					<span class="bread-crumbs__link">Советы по ремонту</span>
+				</div>
+			</div>
+			<!-- Recommendations-->
+			@@include('html/_recommendations.htm',{})
 			<!-- Info-->
 			@@include('html/_info.htm',{})
-			<!-- Map-->
-			@@include('html/_map.htm',{})
 
 		</main>
 		<!-- Footer -->

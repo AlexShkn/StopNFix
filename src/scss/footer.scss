@@ -94,9 +94,11 @@
 		display: inline-flex;
 		align-items: center;
 		font-size: 14px;
-		text-decoration-line: underline;
 		color: rgba(0, 37, 74, 0.7);
 		transition: all 0.3s ease 0s;
+		&:first-child {
+			text-decoration: underline;
+		}
 		&:nth-child(2) {
 			svg.icon {
 				height: 12.5px;
@@ -114,10 +116,9 @@
 			transition: all 0.3s ease 0s;
 		}
 		@media (any-hover: hover) {
-			&:hover {
-				color: var(--color-link);
-				svg.icon {
-					fill: var(--color-link);
+			&:first-child {
+				&:hover {
+					color: var(--color-link);
 				}
 			}
 		}

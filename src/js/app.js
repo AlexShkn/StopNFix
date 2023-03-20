@@ -173,3 +173,23 @@ if (window.location.pathname !== '/index.html') {
 } else {
 	header.classList.remove('header-shadow')
 }
+//====================================================================
+
+const breadCrumbsLinks = document.querySelectorAll('.bread-crumbs__link')
+
+if (breadCrumbsLinks.length > 2) {
+	breadCrumbsLinks.forEach((link, index) => {
+		breadCrumbsHidden(link, index)
+
+		window.addEventListener('resize', () => {
+			breadCrumbsHidden(link, index)
+		})
+	})
+}
+function breadCrumbsHidden(link, index) {
+	if (window.innerWidth < 479.98) {
+		if (index !== breadCrumbsLinks.length - 1) link.style.display = 'none'
+	} else {
+		link.style.display = 'inline-block'
+	}
+}

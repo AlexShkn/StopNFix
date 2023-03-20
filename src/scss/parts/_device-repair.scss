@@ -1,0 +1,155 @@
+.device-repair {
+	padding-bottom: 40px;
+	padding-top: 20px;
+	// .device-repair__container
+
+	&__container {
+		display: flex;
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			padding: 0;
+		}
+	}
+
+	// .device-repair__main
+
+	&__main {
+	}
+
+	// .device-repair__right
+
+	&__right {
+	}
+}
+.device-repair-main {
+	margin-right: 30px;
+	@media (max-width: $tablet) {
+		margin-right: 0;
+		padding: 0 20px;
+	}
+	// .device-repair-main__decription
+
+	&__decription {
+		margin-bottom: 20px;
+	}
+
+	// .device-repair-main__image
+
+	&__image {
+		text-align: center;
+		margin-bottom: 16px;
+		img {
+			@include adaptiveValue('max-width', 237, 158, 1);
+			@include adaptiveValue('height', 240, 160, 1);
+		}
+	}
+
+	// .device-repair-main__title
+
+	&__title {
+		text-align: center;
+		font-weight: 700;
+		@include adaptiveValue('font-size', 36, 26, 1);
+		line-height: math.div(42, 36);
+		color: var(--color-main);
+	}
+
+	// .device-repair-main__text-block
+
+	&__text-block {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+		@media (max-width: $tablet) {
+			padding: 0 20px;
+		}
+	}
+
+	// .device-repair-main__subtitle
+
+	&__subtitle {
+		margin-bottom: 15px;
+		font-weight: 700;
+		font-size: 30px;
+		line-height: math.div(38, 30);
+		color: var(--color-main);
+	}
+
+	// .device-repair-main__text
+
+	&__text {
+		font-size: 15px;
+		line-height: math.div(24, 15);
+		color: var(--color-main);
+	}
+}
+
+.repair-total-price {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	width: 300px;
+	padding-top: 40px;
+	padding-bottom: 34px;
+	background: #ffffff;
+	box-shadow: 0px 0px 10px rgba(0, 37, 74, 0.2);
+	border-radius: 4px;
+	margin-bottom: 30px;
+	@media (max-width: $tablet) {
+		width: 100%;
+	}
+
+	// .repair-total-price__heading
+
+	&__heading {
+		margin-bottom: 48px;
+		font-weight: 700;
+		@include adaptiveValue('font-size', 24, 16, 1);
+		color: var(--color-main);
+	}
+
+	// .repair-total-price__count
+
+	&__count {
+		margin-bottom: 35px;
+		font-size: 18px;
+		color: var(--color-main);
+		span {
+			@include adaptiveValue('font-size', 45, 30, 1);
+		}
+	}
+
+	// .repair-total-price__button
+
+	&__button {
+		width: 211px;
+		margin-bottom: 33px;
+	}
+
+	// .repair-total-price__text
+
+	&__text {
+		font-size: 15px;
+		color: #00254a;
+	}
+}
+.repair-map {
+	padding-top: 27px;
+	background: #ffffff;
+	box-shadow: 0px 0px 10px rgba(0, 37, 74, 0.2);
+	border-radius: 4px;
+	@media (max-width: $tablet) {
+		width: 100%;
+	}
+
+	// .repair-map__heading
+
+	&__heading {
+		margin-bottom: 25px;
+		text-align: center;
+		font-weight: 700;
+		font-size: 24px;
+		color: var(--color-main);
+	}
+}

@@ -156,6 +156,7 @@ function filedMask(input) {
 }
 
 //====================================================================
+// Активный пункт меню
 const navLinks = document.querySelectorAll('.menu__link')
 const locateName = window.location.pathname.replace('/', '')
 
@@ -167,6 +168,7 @@ navLinks.forEach(link => {
 	}
 })
 //====================================================================
+// Скрытие меню поиска на страницах
 const header = document.querySelector('.header')
 if (window.location.pathname !== '/index.html') {
 	header.classList.add('header-shadow')
@@ -174,7 +176,7 @@ if (window.location.pathname !== '/index.html') {
 	header.classList.remove('header-shadow')
 }
 //====================================================================
-
+// Скрытие ссылок bread crumbs на маленьких экранах
 const breadCrumbsLinks = document.querySelectorAll('.bread-crumbs__link')
 
 if (breadCrumbsLinks.length > 2) {

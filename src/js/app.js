@@ -111,10 +111,10 @@ isWebp()
 
 //====================================================================
 
-const phoneFiled = document.getElementById('phone-field')
+const phoneField = document.getElementById('phone-field')
 let keyCode
 
-filedMask(phoneFiled)
+filedMask(phoneField)
 
 function filedMask(input) {
 	function mask(event) {
@@ -201,16 +201,43 @@ function breadCrumbsHidden(link, index) {
 
 const inputPrice = document.querySelectorAll('[data-table-price]')
 const priceCount = document.getElementById('price-count')
+const servicesName = document.querySelector('.select-services__service-name')
+const submitBtn = document.querySelector('[data-btn-thanks]')
+const nameField = document.getElementById('name-field')
 let totalPrice = 0
 
+const selectedServices = {
+	services: [],
+	totalPrice: 0,
+	name: '',
+	phone: '',
+}
+
 inputPrice.forEach(input => {
-	input.addEventListener('change', e => {
+	input.addEventListener('change', () => {
 		if (input.checked) {
 			totalPrice += +input.getAttribute('price')
 		} else if (!input.checked) {
 			totalPrice -= +input.getAttribute('price')
 		}
+		selectedServices.totalPrice = totalPrice
 		priceCount.innerText = totalPrice
 	})
 })
+
+submitBtn.addEventListener('click', () => {
+	inputPrice.forEach(input => {
+		if (input.checked) {
+			selectedServices.services.push([
+				input.getAttribute('name'),
+				input.getAttribute('price') + 'грн',
+			])
+		}
+	})
+	selectedServices.name = nameField.value
+	selectedServices.phone = phoneField.value
+
+	console.log(selectedServices)
+})
+
 //====================================================================

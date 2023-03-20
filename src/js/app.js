@@ -195,3 +195,22 @@ function breadCrumbsHidden(link, index) {
 		link.style.display = 'inline-block'
 	}
 }
+
+//====================================================================
+// Расчет суммы ремонта
+
+const inputPrice = document.querySelectorAll('[data-table-price]')
+const priceCount = document.getElementById('price-count')
+let totalPrice = 0
+
+inputPrice.forEach(input => {
+	input.addEventListener('change', e => {
+		if (input.checked) {
+			totalPrice += +input.getAttribute('price')
+		} else if (!input.checked) {
+			totalPrice -= +input.getAttribute('price')
+		}
+		priceCount.innerText = totalPrice
+	})
+})
+//====================================================================

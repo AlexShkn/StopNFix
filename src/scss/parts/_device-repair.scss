@@ -25,12 +25,14 @@
 	margin-right: 30px;
 	@media (max-width: $tablet) {
 		margin-right: 0;
-		padding: 0 20px;
 	}
-	// .device-repair-main__decription
+	// .device-repair-main__description
 
-	&__decription {
+	&__description {
 		margin-bottom: 20px;
+		@media (max-width: $tablet) {
+			padding: 0 10px;
+		}
 	}
 
 	// .device-repair-main__image
@@ -53,34 +55,88 @@
 		line-height: math.div(42, 36);
 		color: var(--color-main);
 	}
+}
 
-	// .device-repair-main__text-block
+.select-services {
+	padding: 29px 55px 39px 32px;
+	background: #ffffff;
+	box-shadow: 0px 0px 10px rgba(0, 37, 74, 0.2);
+	border-radius: 4px;
+	@media (max-width: $tablet) {
+		@include adaptiveValue('margin-bottom', 30, 20, 1);
+	}
+	@media (max-width: $mobile) {
+		padding: 25px 22px;
+	}
+	// .select-services__table
 
-	&__text-block {
-		&:not(:last-child) {
-			margin-bottom: 10px;
-		}
-		@media (max-width: $tablet) {
-			padding: 0 20px;
-		}
+	&__table {
+		width: 100%;
 	}
 
-	// .device-repair-main__subtitle
+	// .select-services__title
 
-	&__subtitle {
-		margin-bottom: 15px;
+	&__title {
+		margin-bottom: 20px;
 		font-weight: 700;
-		font-size: 30px;
-		line-height: math.div(38, 30);
-		color: var(--color-main);
+		font-size: 18px;
+		color: #00254a;
 	}
 
-	// .device-repair-main__text
+	// .select-services__head
 
-	&__text {
-		font-size: 15px;
-		line-height: math.div(24, 15);
-		color: var(--color-main);
+	&__head {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		margin-bottom: 23px;
+		th {
+			text-align: left;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			color: #3d3d3d;
+		}
+	}
+
+	// .select-services__row
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 12px;
+		border-bottom: 1px solid rgba(212, 228, 239, 0.6);
+		@include adaptiveValue('font-size', 16, 15, 1);
+		color: #00254a;
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+	// .select-services__service-name
+
+	&__service-name {
+		position: relative;
+		display: flex;
+		align-items: center;
+		transition: all 0.1s ease 0s;
+		margin-right: 15px;
+		@media (any-hover: hover) {
+			&:hover {
+				&:hover {
+					text-decoration: underline;
+					color: var(--color-accent);
+				}
+			}
+		}
+	}
+
+	// .select-services__service-price
+
+	&__service-price {
+		width: 25px;
+		text-align: center;
 	}
 }
 
@@ -90,8 +146,8 @@
 	align-items: center;
 	text-align: center;
 	width: 300px;
-	padding-top: 40px;
-	padding-bottom: 34px;
+	@include adaptiveValue('padding-top', 43, 20, 1);
+	@include adaptiveValue('padding-bottom', 34, 20, 1);
 	background: #ffffff;
 	box-shadow: 0px 0px 10px rgba(0, 37, 74, 0.2);
 	border-radius: 4px;
@@ -103,7 +159,7 @@
 	// .repair-total-price__heading
 
 	&__heading {
-		margin-bottom: 48px;
+		@include adaptiveValue('margin-bottom', 48, 20, 1);
 		font-weight: 700;
 		@include adaptiveValue('font-size', 24, 16, 1);
 		color: var(--color-main);
@@ -112,7 +168,7 @@
 	// .repair-total-price__count
 
 	&__count {
-		margin-bottom: 35px;
+		@include adaptiveValue('margin-bottom', 35, 23, 1);
 		font-size: 18px;
 		color: var(--color-main);
 		span {
@@ -124,7 +180,7 @@
 
 	&__button {
 		width: 211px;
-		margin-bottom: 33px;
+		@include adaptiveValue('margin-bottom', 33, 20, 1);
 	}
 
 	// .repair-total-price__text
@@ -135,7 +191,7 @@
 	}
 }
 .repair-map {
-	padding-top: 27px;
+	padding-top: 25px;
 	background: #ffffff;
 	box-shadow: 0px 0px 10px rgba(0, 37, 74, 0.2);
 	border-radius: 4px;

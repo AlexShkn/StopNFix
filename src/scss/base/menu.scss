@@ -52,7 +52,7 @@
 			align-items: center;
 			gap: 0;
 			padding-top: 28px;
-			padding-left: 31px;
+			margin-bottom: 40px;
 
 			li {
 				&:not(:last-child) {
@@ -87,6 +87,32 @@
 		}
 		@media (max-width: $mobile) {
 			display: none;
+		}
+	}
+
+	// .menu__social-list
+
+	&__social-list {
+		display: none;
+		@media (max-width: $mobile) {
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+		}
+	}
+
+	// .menu__social-item
+
+	&__social-item {
+	}
+
+	// .menu__social-link
+
+	&__social-link {
+		svg.icon {
+			width: 20px;
+			height: 20px;
+			fill: var(--color-accent);
 		}
 	}
 }

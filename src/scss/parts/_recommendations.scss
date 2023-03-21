@@ -1,34 +1,10 @@
 .recommendations {
 	padding-bottom: 60px;
-	// .recommendations__container
-
-	&__container {
-	}
 
 	// .recommendations__title
 
 	&__title {
 		margin-bottom: 35px;
-	}
-
-	// .recommendations__button
-
-	&__button {
-		position: relative;
-		display: block;
-		margin: 0px auto;
-		padding-right: 75px;
-		padding-left: 49px;
-		&::before {
-			content: '';
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			right: 43px;
-			width: 17px;
-			height: 17px;
-			background: url('@img/sprite-icons/refresh.svg') center / cover no-repeat;
-		}
 	}
 }
 
@@ -37,10 +13,6 @@
 	flex-direction: column;
 	@include adaptiveValue('gap', 55, 20, 1);
 	@include adaptiveValue('margin-bottom', 55, 33, 1);
-	// .recommendations-list__item
-
-	&__item {
-	}
 
 	// .recommendations-list__post
 

@@ -5,6 +5,7 @@
 
 	&__container {
 		display: flex;
+		justify-content: space-between;
 		@media (max-width: $tablet) {
 			flex-direction: column;
 			padding: 0;
@@ -22,9 +23,11 @@
 	}
 }
 .device-repair-main {
+	width: 70%;
 	margin-right: 30px;
 	@media (max-width: $tablet) {
 		margin-right: 0;
+		width: 100%;
 	}
 	// .device-repair-main__description
 
@@ -46,9 +49,9 @@
 		}
 	}
 
-	// .device-repair-main__title
+	// .device-repair-main__modal-name
 
-	&__title {
+	&__model-name {
 		text-align: center;
 		font-weight: 700;
 		@include adaptiveValue('font-size', 36, 26, 1);
@@ -188,24 +191,5 @@
 	&__text {
 		font-size: 15px;
 		color: #00254a;
-	}
-}
-.repair-map {
-	padding-top: 25px;
-	background: #ffffff;
-	box-shadow: 0px 0px 10px rgba(0, 37, 74, 0.2);
-	border-radius: 4px;
-	@media (max-width: $tablet) {
-		width: 100%;
-	}
-
-	// .repair-map__heading
-
-	&__heading {
-		margin-bottom: 25px;
-		text-align: center;
-		font-weight: 700;
-		font-size: 24px;
-		color: var(--color-main);
 	}
 }

@@ -86,8 +86,12 @@ body._lock {
 @import './parts/recommendations';
 @import './parts/recommendations-inner';
 @import './parts/device-repair';
+@import './parts/device-selection';
+@import './parts/about';
 //====================================================================
 @import './parts/bread-crumbs';
+@import './parts/callback-panel';
+@import './parts/mini-map';
 
 //===========MAIN===============================================
 @import 'footer';

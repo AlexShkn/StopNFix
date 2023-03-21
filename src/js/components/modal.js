@@ -1,6 +1,6 @@
 const fixBlocks = document.querySelectorAll('.fix-block')
 
-const disabledScroll = () => {
+const enabledScroll = () => {
 	document.body.classList.remove('_lock')
 	fixBlocks.forEach(el => (el.style.paddingRight = 0))
 	document.body.style.paddingRight = '0px'
@@ -16,9 +16,9 @@ const openModal = (triggerSelector, modalDataSelector) => {
 		trigger.addEventListener('click', e => {
 			e.preventDefault()
 			modal.classList.add('show')
-			document.body.classList.add('_lock')
 			fixBlocks.forEach(el => (el.style.paddingRight = paddingOffset + 'px'))
 			document.body.style.paddingRight = paddingOffset + 'px'
+			document.body.classList.add('_lock')
 		}),
 	)
 }
@@ -28,17 +28,23 @@ const closeModal = () => {
 	if (!modals) return
 	modals.forEach(el => {
 		el.addEventListener('click', e => {
+			e.preventDefault()
+
 			if (
 				e.target.closest('[data-modal-close]') ||
 				e.target.closest('[data-btn-close]')
 			) {
-				e.preventDefault()
 				el.classList.remove('show')
-				disabledScroll()
+				enabledScroll()
 			}
+			if (e.target.closest('[data-btn-redirect]')) {
+				el.classList.remove('show')
+				document.body.classList.add('_lock')
+			}
+
 			if (!e.target.closest('[modal-content]')) {
 				el.classList.remove('show')
-				disabledScroll()
+				enabledScroll()
 			}
 		})
 	})

@@ -159,6 +159,13 @@ function filedMask(input) {
 // Активный пункт меню
 const navLinks = document.querySelectorAll('.menu__link')
 const locateName = window.location.pathname.replace('/', '')
+const pageName = document.querySelector('.bread-crumbs__container > span')
+
+if (pageName) {
+	if (locateName === 'page-device-repair.html') {
+		document.title = pageName.innerText
+	}
+}
 
 navLinks.forEach(link => {
 	link.classList.remove('_current')
@@ -201,29 +208,32 @@ function breadCrumbsHidden(link, index) {
 
 const inputPrice = document.querySelectorAll('[data-table-price]')
 const priceCount = document.getElementById('price-count')
-const servicesName = document.querySelector('.select-services__service-name')
+const deviceName = document.querySelector('.device-repair-main__model-name')
 const submitBtn = document.querySelector('[data-btn-thanks]')
 const nameField = document.getElementById('name-field')
 let totalPrice = 0
 
 const selectedServices = {
+	device: '',
 	services: [],
 	totalPrice: 0,
 	name: '',
 	phone: '',
 }
 
-inputPrice.forEach(input => {
-	input.addEventListener('change', () => {
-		if (input.checked) {
-			totalPrice += +input.getAttribute('price')
-		} else if (!input.checked) {
-			totalPrice -= +input.getAttribute('price')
-		}
-		selectedServices.totalPrice = totalPrice
-		priceCount.innerText = totalPrice
+if (inputPrice) {
+	inputPrice.forEach(input => {
+		input.addEventListener('change', () => {
+			if (input.checked) {
+				totalPrice += +input.getAttribute('price')
+			} else if (!input.checked) {
+				totalPrice -= +input.getAttribute('price')
+			}
+			selectedServices.totalPrice = totalPrice
+			priceCount.innerText = totalPrice
+		})
 	})
-})
+}
 
 submitBtn.addEventListener('click', () => {
 	inputPrice.forEach(input => {
@@ -234,10 +244,91 @@ submitBtn.addEventListener('click', () => {
 			])
 		}
 	})
+	selectedServices.device = deviceName ? deviceName.innerText : ''
 	selectedServices.name = nameField.value
 	selectedServices.phone = phoneField.value
 
 	console.log(selectedServices)
 })
+
+//====================================================================
+
+const modalCard = document.querySelectorAll('.device-card__link')
+
+modalCard.forEach(card => {
+	card.addEventListener('click', e => {
+		let cardItem = e.currentTarget.closest('.device-card')
+
+		const cardImage = cardItem.querySelector('.device-card__image')
+		const cardName = cardItem.querySelector('.device-card__model-name')
+	})
+})
+
+//====================================================================
+
+const showMore = document.querySelector('.button_show-more')
+const devices = document.querySelectorAll('.device-list__item')
+
+let items
+
+window.innerWidth > 767.98 ? (items = 10) : (items = 6)
+
+if (showMore) {
+	showMore.addEventListener('click', () => {
+		window.innerWidth > 767.98 ? (items += 5) : (items += 3)
+
+		const array = Array.from(document.querySelector('.device-list').children)
+		const visItems = array.slice(0, items)
+
+		visItems.forEach(el => el.classList.add('_visible'))
+
+		if (visItems.length === devices.length) {
+			showMore.style.display = 'none'
+		}
+	})
+}
+
+const paginationList = document.querySelector(
+	'.selection-pagination__list > span',
+)
+
+devices.forEach((device, index) => {
+	paginationList.insertAdjacentHTML(
+		'beforebegin',
+		createPaginationItem(index + 1),
+	)
+})
+
+function createPaginationItem(index) {
+	return `
+	<div class="selection-pagination__item">${index}</div>
+	`
+}
+
+let currentPage = 0
+
+const paginationItems = document.querySelectorAll('.selection-pagination__item')
+
+if (paginationItems.length > 0) {
+	paginationItems[paginationItems.length - 1].innerText = devices.length
+	paginationItems[paginationItems.length - 1].style.display = 'block'
+
+	paginationItems.forEach((item, index) => {
+		item.addEventListener('click', () => {
+			currentPage = index
+			changeCurrentPage()
+		})
+	})
+
+	function changeCurrentPage() {
+		paginationItems.forEach(item => {
+			item.classList.remove('_current')
+		})
+
+		paginationItems[currentPage].classList.add('_current')
+	}
+
+	changeCurrentPage()
+}
 
 //====================================================================

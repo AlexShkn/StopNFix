@@ -108,7 +108,7 @@ currentNavLinkChange()
 const header = document.querySelector('.header')
 
 function headerShadowChange() {
-	if (locateName !== '/index.html' && locateName !== '/page-filter.html') {
+	if (locateName !== 'index.html' && locateName !== 'page-filter.html') {
 		header.classList.add('header-shadow')
 	} else {
 		header.classList.remove('header-shadow')

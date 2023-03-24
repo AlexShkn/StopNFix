@@ -85,30 +85,40 @@ const navLinks = document.querySelectorAll('.menu__link')
 const locateName = window.location.pathname.replace('/', '')
 const pageName = document.querySelector('.bread-crumbs__container > span')
 
-if (pageName) {
-	if (locateName === 'page-device-repair.html') {
-		document.title = pageName.textContent
+function currentNavLinkChange() {
+	if (pageName) {
+		if (locateName === 'page-device-repair.html') {
+			document.title = pageName.textContent
+		}
 	}
+
+	navLinks.forEach(link => {
+		link.classList.remove('_current')
+
+		if (locateName === link.getAttribute('href')) {
+			link.classList.add('_current')
+		}
+	})
 }
 
-navLinks.forEach(link => {
-	link.classList.remove('_current')
+currentNavLinkChange()
 
-	if (locateName === link.getAttribute('href')) {
-		link.classList.add('_current')
-	}
-})
 //====================================================================
-// Скрытие меню поиска на страницах
+// Скрытие тени хедера на страницах
 const header = document.querySelector('.header')
-if (
-	window.location.pathname !== '/index.html' &&
-	window.location.pathname !== '/page-filter.html'
-) {
-	header.classList.add('header-shadow')
-} else {
-	header.classList.remove('header-shadow')
+
+function headerShadowChange() {
+	if (
+		window.location.pathname !== '/index.html' &&
+		window.location.pathname !== '/page-filter.html'
+	) {
+		header.classList.add('header-shadow')
+	} else {
+		header.classList.remove('header-shadow')
+	}
 }
+
+headerShadowChange()
 
 //====================================================================
 // Скрытие ссылок bread crumbs на маленьких экранах
@@ -123,6 +133,7 @@ if (breadCrumbsLinks.length > 2) {
 		})
 	})
 }
+
 function breadCrumbsHidden(link, index) {
 	if (window.innerWidth < 479.98) {
 		if (index !== breadCrumbsLinks.length - 1) link.style.display = 'none'
@@ -199,7 +210,7 @@ submitBtns.forEach(btn => {
 				])
 			}
 		})
-		selectedServices.device = deviceName.textContent
+		selectedServices.device = deviceName ? deviceName.textContent : ''
 		selectedServices.name = phoneValue
 		selectedServices.phone = nameValue
 

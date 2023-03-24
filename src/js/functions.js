@@ -82,7 +82,7 @@ function filedMask(inputs) {
 //====================================================================
 // Активный пункт меню
 const navLinks = document.querySelectorAll('.menu__link')
-const locateName = window.location.pathname.replace('/', '')
+const locateName = window.location.pathname.replace('/', '').split('/')[1]
 const pageName = document.querySelector('.bread-crumbs__container > span')
 
 function currentNavLinkChange() {
@@ -108,10 +108,7 @@ currentNavLinkChange()
 const header = document.querySelector('.header')
 
 function headerShadowChange() {
-	if (
-		window.location.pathname !== '/index.html' &&
-		window.location.pathname !== '/page-filter.html'
-	) {
+	if (locateName !== '/index.html' && locateName !== '/page-filter.html') {
 		header.classList.add('header-shadow')
 	} else {
 		header.classList.remove('header-shadow')

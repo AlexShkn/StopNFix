@@ -28,7 +28,7 @@ const openModal = (triggerSelector, modalDataSelector) => {
 }
 
 const closeModal = () => {
-	const modals = document.querySelectorAll('[modal]')
+	const modals = document.querySelectorAll('[data-modal]')
 	if (!modals) return
 	modals.forEach(el => {
 		el.addEventListener('click', e => {
@@ -37,7 +37,7 @@ const closeModal = () => {
 			if (
 				e.target.closest('[data-modal-close]') ||
 				e.target.closest('[data-btn-close]') ||
-				!e.target.closest('[modal-content]')
+				!e.target.closest('[data-modal-content]')
 			) {
 				el.classList.remove('show')
 				enabledScroll()

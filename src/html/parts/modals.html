@@ -1,6 +1,6 @@
-<div data-modal-filter modal class="modal-filter fade">
+<div data-modal-filter data-modal class="modal-filter fade">
 	<div class="modal-filter__dialog">
-		<div modal-content class="modal-filter__content ">
+		<div data-modal-content class="modal-filter__content ">
 			<a data-modal-close href="#" class="modal-filter__close">
 				<svg class="icon">
 					<use xlink:href="@img/sprite.svg#close"></use>
@@ -12,9 +12,9 @@
 <!-- ==================================================================== -->
 
 
-<div data-modal-callback modal class="modal-callback fade">
+<div data-modal-callback data-modal class="modal-callback fade">
 	<div class="modal-callback__dialog">
-		<div modal-content class="modal-callback__content">
+		<div data-modal-content class="modal-callback__content">
 			<a data-btn-close href="#" class="modal-callback__close">
 				<svg class="icon">
 					<use xlink:href="@img/sprite.svg#close">
@@ -24,9 +24,9 @@
 			<h3 class="modal-callback__title">Введите Ваши контактные данные</h3>
 			<form class="modal-callback-form">
 				<label class="modal-callback-form__label">Ваше имя:*</label>
-				<input id="name-field" type="text" name="name" class="modal-callback-form__input" placeholder="Ваше имя">
+				<input data-name-field type="text" name="name" class="modal-callback-form__input" placeholder="Ваше имя">
 				<label class="modal-callback__label">Ваш телефон: *</label>
-				<input id="phone-field" autocomplete="off" type="tel" name="phone" data-value="Телефон" required
+				<input data-phone-field autocomplete="off" type="tel" name="phone" data-value="Телефон" required
 					class="modal-callback-form__input" placeholder="+7(___).___.__.__">
 				<button data-btn-thanks data-btn-redirect type="submit" class="modal-callback-form__button button">Записаться на
 					ремонт</button>
@@ -37,9 +37,9 @@
 
 <!-- ==================================================================== -->
 
-<div data-modal-thanks modal class="modal-thanks fade">
+<div data-modal-thanks data-modal class="modal-thanks fade">
 	<div class="modal-thanks__dialog">
-		<div modal-content class="modal-thanks__content">
+		<div data-modal-content class="modal-thanks__content">
 			<a data-modal-close href="#" class="modal-thanks__close">
 				<svg class="icon">
 					<use xlink:href="@img/sprite.svg#close"></use>

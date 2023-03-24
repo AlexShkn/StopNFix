@@ -35,12 +35,12 @@ isWebp()
 
 //====================================================================
 
-const phoneField = document.getElementById('phone-field')
+const phoneFields = document.querySelectorAll('[data-phone-field]')
 let keyCode
 
-filedMask(phoneField)
+filedMask(phoneFields)
 
-function filedMask(input) {
+function filedMask(inputs) {
 	function mask(event) {
 		event.keyCode && (keyCode = event.keyCode)
 		let pos = this.selectionStart
@@ -73,10 +73,10 @@ function filedMask(input) {
 		if (event.type == 'blur' && this.value.length < 5) this.value = ''
 	}
 
-	input.addEventListener('input', mask, false)
-	input.addEventListener('focus', mask, false)
-	input.addEventListener('blur', mask, false)
-	input.addEventListener('keydown', mask, false)
+	inputs.forEach(input => input.addEventListener('input', mask, false))
+	inputs.forEach(input => input.addEventListener('focus', mask, false))
+	inputs.forEach(input => input.addEventListener('blur', mask, false))
+	inputs.forEach(input => input.addEventListener('keydown', mask, false))
 }
 
 //====================================================================
@@ -137,17 +137,30 @@ function breadCrumbsHidden(link, index) {
 const inputPrice = document.querySelectorAll('[data-table-price]')
 const priceCount = document.getElementById('price-count')
 const deviceName = document.querySelector('#device-model-name > span')
-const submitBtn = document.querySelector('[data-btn-thanks]')
-const nameField = document.getElementById('name-field')
+const submitBtns = document.querySelectorAll('[data-btn-thanks]')
+const nameFields = document.querySelectorAll('[data-name-field]')
+const btnsSubmit = document.querySelectorAll('[data-btn-redirect]')
+
 let totalPrice = 0
 export let validate = false
 
-const btnSubmit = document.querySelector('[data-btn-redirect]')
+let phoneValue = ''
+let nameValue = ''
 
-btnSubmit.addEventListener('click', () => {
-	const phoneFieldValue = phoneField.value.trim()
-	if (phoneFieldValue.length === 18 && nameField.value.length >= 2)
-		isValidateChange(true)
+btnsSubmit.forEach(btn => {
+	btn.addEventListener('click', () => {
+		nameFields.forEach(field => {
+			if (field.value) nameValue += field.value
+		})
+
+		phoneFields.forEach(field => {
+			if (field.value) phoneValue += field.value
+		})
+
+		const phoneFieldValue = phoneValue.trim()
+		if (phoneFieldValue.length === 18 && nameValue.length >= 2)
+			isValidateChange(true)
+	})
 })
 
 export function isValidateChange(value) {
@@ -166,9 +179,9 @@ if (inputPrice) {
 	inputPrice.forEach(input => {
 		input.addEventListener('change', () => {
 			if (input.checked) {
-				totalPrice += +input.getAttribute('price')
+				totalPrice += +input.value
 			} else if (!input.checked) {
-				totalPrice -= +input.getAttribute('price')
+				totalPrice -= +input.value
 			}
 			selectedServices.totalPrice = totalPrice
 			if (priceCount) priceCount.textContent = totalPrice
@@ -176,22 +189,23 @@ if (inputPrice) {
 	})
 }
 
-submitBtn.addEventListener('click', () => {
-	inputPrice.forEach(input => {
-		if (input.checked) {
-			selectedServices.services.push([
-				input.getAttribute('name'),
-				input.getAttribute('price') + 'грн',
-			])
-		}
+submitBtns.forEach(btn => {
+	btn.addEventListener('click', () => {
+		inputPrice.forEach(input => {
+			if (input.checked) {
+				selectedServices.services.push([
+					input.getAttribute('name'),
+					input.value + 'грн',
+				])
+			}
+		})
+		selectedServices.device = deviceName.textContent
+		selectedServices.name = phoneValue
+		selectedServices.phone = nameValue
+
+		if (validate) console.log(selectedServices)
 	})
-	selectedServices.device = deviceName.textContent
-	selectedServices.name = nameField.value
-	selectedServices.phone = phoneField.value
-
-	if (validate) console.log(selectedServices)
 })
-
 //====================================================================
 
 const modalCard = document.querySelectorAll('.device-card__link')

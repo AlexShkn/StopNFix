@@ -1,3 +1,5 @@
+import { isValidateChange, validate } from '../functions.js'
+
 const fixBlocks = document.querySelectorAll('.fix-block')
 
 const enabledScroll = () => {
@@ -15,6 +17,8 @@ const openModal = (triggerSelector, modalDataSelector) => {
 	triggersList.forEach(trigger =>
 		trigger.addEventListener('click', e => {
 			e.preventDefault()
+
+			if (trigger.hasAttribute('data-btn-thanks') && !validate) return
 			modal.classList.add('show')
 			fixBlocks.forEach(el => (el.style.paddingRight = paddingOffset + 'px'))
 			document.body.style.paddingRight = paddingOffset + 'px'
@@ -32,19 +36,16 @@ const closeModal = () => {
 
 			if (
 				e.target.closest('[data-modal-close]') ||
-				e.target.closest('[data-btn-close]')
+				e.target.closest('[data-btn-close]') ||
+				!e.target.closest('[modal-content]')
 			) {
 				el.classList.remove('show')
 				enabledScroll()
+				isValidateChange(false)
 			}
-			if (e.target.closest('[data-btn-redirect]')) {
+			if (e.target.closest('[data-btn-redirect]') && validate) {
 				el.classList.remove('show')
 				document.body.classList.add('_lock')
-			}
-
-			if (!e.target.closest('[modal-content]')) {
-				el.classList.remove('show')
-				enabledScroll()
 			}
 		})
 	})

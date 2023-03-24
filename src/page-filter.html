@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Ремонт</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="description" content="Ремонт телефонов и планшетов любой сложности">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- Header -->
+		<header class="header">
+			@@include('html/_header.htm',{})
+		</header>
+		<main class="page">
+			<!-- Filter-->
+			@@include('html/_filters.htm',{})
+			<!-- Steps-->
+			@@include('html/_steps.htm',{})
+		</main>
+		<!-- Footer -->
+		@@include('html/_footer.htm',{})
+
+
+		@@include('html/parts/modals.html',{})
+
+		<button id="back-to-top-btn">
+			<svg class="icon">
+				<use xlink:href="@img/sprite.svg#double-arrow-up"></use>
+			</svg>
+		</button>
+		<div class="preloader">
+			<div class="sk-chase">
+				<div class="sk-chase-dot"></div>
+				<div class="sk-chase-dot"></div>
+				<div class="sk-chase-dot"></div>
+				<div class="sk-chase-dot"></div>
+				<div class="sk-chase-dot"></div>
+				<div class="sk-chase-dot"></div>
+			</div>
+		</div>
+
+	</div>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

@@ -36,6 +36,11 @@
 		}
 	}
 
+	&_red {
+		background-color: #f44f4f;
+		border: 2px solid #f44f4f;
+	}
+
 	&_show-more {
 		position: relative;
 		display: block;

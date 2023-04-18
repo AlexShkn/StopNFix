@@ -351,16 +351,20 @@ if (searchButton) {
 		item.addEventListener('click', e => {
 			if (item.textContent === 'Мобильный телефон') {
 				const deviceNames = Object.keys(mobileModels)
-				deviceNames.forEach(name => {
-					createSearchDropdownList(searchBrandList, name)
-				})
+				renderDropdownList(
+					createSearchDropdownList,
+					searchBrandList,
+					deviceNames,
+				)
 			}
 
 			if (item.textContent === 'Планшет') {
 				const deviceNames = Object.keys(tabletModels)
-				deviceNames.forEach(name => {
-					createSearchDropdownList(searchBrandList, name)
-				})
+				renderDropdownList(
+					createSearchDropdownList,
+					searchBrandList,
+					deviceNames,
+				)
 			}
 		})
 	})
@@ -372,18 +376,29 @@ if (searchButton) {
 					const brandName = e.target.textContent
 
 					if (searchType.textContent === 'Мобильный телефон') {
-						mobileModels[brandName].forEach(name => {
-							createSearchDropdownList(searchModelList, name)
-						})
+						renderDropdownList(
+							createSearchDropdownList,
+							searchModelList,
+							mobileModels[brandName],
+							brandName,
+						)
 					}
 
 					if (searchType.textContent === 'Планшет') {
-						tabletModels[brandName].forEach(name => {
-							createSearchDropdownList(searchModelList, name)
-						})
+						renderDropdownList(
+							createSearchDropdownList,
+							searchModelList,
+							tabletModels[brandName],
+							brandName,
+						)
 					}
 				}
 			})
+		})
+	}
+	function renderDropdownList(createFunc, container, array) {
+		array.forEach(name => {
+			createFunc(container, name)
 		})
 	}
 
@@ -400,11 +415,9 @@ if (searchButton) {
 		e.preventDefault()
 
 		if (
-			!(
-				searchType.textContent === 'Выберите устройство' &&
-				searchBrand.textContent === 'Выберите марку' &&
-				searchModel.textContent === 'Выберите модель'
-			)
+			searchType.textContent !== 'Выберите устройство' &&
+			searchBrand.textContent !== 'Выберите марку' &&
+			searchModel.textContent !== 'Выберите модель'
 		) {
 			// const typeDevice = searchDeviceType.split('-')[1]
 			const deviceSearch = {
@@ -419,10 +432,10 @@ if (searchButton) {
 }
 
 function capitalizeFirstLetter(string) {
-	return string.charAt(0).toUpperCase() + string.slice(1)
+	if (string) return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-const renderRepairDeviceItem = ({ searchType, searchBrand, searchModel }) => {
+const renderRepairDeviceItem = ({ searchBrand, searchModel }) => {
 	const deviceName =
 		searchBrand === 'Другие' ? searchModel : `${searchBrand} ${searchModel}`
 	breadCrumbsLink.textContent = deviceName
@@ -435,9 +448,9 @@ function createRepairDeviceItem(deviceName) {
 		'beforeend',
 		`
 		<div class="device-repair-main__image">
-		<img src="img/models/mobile-model.jpg" alt="">
-	</div>
-	<h1 id="device-model-name" class="device-repair-main__model-name">Ремонт <span>${deviceName}</span></h1>
+			<img src="img/models/mobile-model.jpg" alt="">
+		</div>
+		<h1 id="device-model-name" class="device-repair-main__model-name">Ремонт <span>${deviceName}</span></h1>
 	`,
 	)
 }
@@ -452,7 +465,6 @@ if (locateName === 'page-device-repair.html') {
 const linkRepairItemsName = document.querySelectorAll(
 	'.dropdown__inner-nav-link > a',
 )
-
 const showMore = document.querySelector('.button_show-more')
 
 linkRepairItemsName.forEach(link => {
@@ -472,6 +484,7 @@ linkRepairItemsName.forEach(link => {
 const deviceList = document.querySelector('.device-list')
 
 const renderDeviceItem = ({ deviceType, deviceBrand }) => {
+	breadCrumbsLink.textContent = capitalizeFirstLetter(deviceBrand)
 	if (deviceType === 'mobile' && mobileModels[deviceBrand]) {
 		// createPaginationList(mobileModels[deviceBrand])
 		showMoreItems(mobileModels[deviceBrand])
@@ -490,6 +503,27 @@ const renderDeviceItem = ({ deviceType, deviceBrand }) => {
 	}
 }
 
+if (deviceList) {
+	deviceList.addEventListener('click', e => {
+		if (e.target.classList.contains('device-card__link')) {
+			const deviceName = e.target.previousElementSibling.textContent
+			let result = [
+				deviceName.split(' ', 1).toString(),
+				deviceName.split(' ').slice(1).join(' '),
+			]
+			const brand = result[0]
+			const model = result[1]
+
+			const deviceSearch = {
+				searchBrand: capitalizeFirstLetter(brand),
+				searchModel: model,
+			}
+			localStorage.setItem('device-search', JSON.stringify(deviceSearch))
+			window.document.location = './page-device-repair.html'
+		}
+	})
+}
+
 function createDeviceItem(deviceName) {
 	deviceList.insertAdjacentHTML(
 		'beforeend',
@@ -500,14 +534,17 @@ function createDeviceItem(deviceName) {
 			<img src="img/models/galaxy-a3.jpg" alt="">
 		</div>
 		<h2 class="device-card__model-name">${deviceName}</h2>
-		<a href="page-device-repair.html" class="device-card__link button">Ремонтировать</a>
+		<a href="#" class="device-card__link button">Ремонтировать</a>
 	</article>
 </li>
 	`,
 	)
 }
 
-if (locateName === 'page-device-selection.html') {
+if (
+	locateName === 'page-device-selection.html' ||
+	locateName === 'page-device-selection.html#'
+) {
 	localStoragePack = JSON.parse(localStorage.getItem('device-repair'))
 	renderDeviceItem(localStoragePack)
 }
@@ -522,6 +559,9 @@ function showMoreItems(devices) {
 	window.innerWidth > 767.98 ? (items = 10) : (items = 6)
 
 	if (showMore) {
+		if (items >= devices.length) {
+			showMore.style.display = 'none'
+		}
 		let currentPage = 0
 
 		const paginationItems = document.querySelectorAll(

@@ -61,12 +61,14 @@
 			transition: fill 0.3s ease 0s;
 		}
 
-		&:hover {
-			button {
-				color: #fff;
-			}
-			svg.icon {
-				fill: #fff;
+		@media (any-hover: hover) {
+			&:hover {
+				button {
+					color: #fff;
+				}
+				svg.icon {
+					fill: #fff;
+				}
 			}
 		}
 	}
@@ -104,12 +106,16 @@
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
+		input {
+			outline: none;
+			pointer-events: none;
+		}
 	}
 	// .block-filter__type
 	&__type {
 		padding-right: 4px;
 		font-size: 14px;
-		color: rgba(55, 69, 97, 0.4);
+		color: rgba(55, 69, 97, 0.6);
 		@media (max-width: $tablet) {
 			font-size: 12px;
 		}

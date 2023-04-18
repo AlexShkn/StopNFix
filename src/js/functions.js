@@ -82,7 +82,8 @@ function filedMask(inputs) {
 //====================================================================
 // Активный пункт меню
 const navLinks = document.querySelectorAll('.menu__link')
-const locateName = window.location.pathname.replace('/', '').split('/')[1]
+// const locateName = window.location.pathname.replace('/', '').split('/')[1]
+const locateName = window.location.pathname.replace('/', '')
 const pageName = document.querySelector('.bread-crumbs__container > span')
 
 function currentNavLinkChange() {
@@ -108,7 +109,10 @@ currentNavLinkChange()
 const header = document.querySelector('.header')
 
 function headerShadowChange() {
-	if (locateName !== 'index.html' && locateName !== 'page-filter.html') {
+	if (
+		window.location.pathname !== '/index.html' &&
+		window.location.pathname !== '/page-filter.html'
+	) {
 		header.classList.add('header-shadow')
 	} else {
 		header.classList.remove('header-shadow')
@@ -207,9 +211,10 @@ submitBtns.forEach(btn => {
 				])
 			}
 		})
-		selectedServices.device = deviceName ? deviceName.textContent : ''
-		selectedServices.name = phoneValue
-		selectedServices.phone = nameValue
+		const modelName = JSON.parse(localStorage.getItem('device-search'))
+		selectedServices.device = `${modelName.searchType} ${modelName.searchBrand} ${modelName.searchModel}`
+		selectedServices.name = nameValue
+		selectedServices.phone = phoneValue
 
 		if (validate) console.log(selectedServices)
 	})
@@ -228,70 +233,11 @@ modalCard.forEach(card => {
 })
 
 //====================================================================
-// Показать еще
-const showMore = document.querySelector('.button_show-more')
-const devices = document.querySelectorAll('.device-list__item')
+// Убираем кнопки секции about в секции device-selection
 
-let items
-
-window.innerWidth > 767.98 ? (items = 10) : (items = 6)
-
-if (showMore) {
-	showMore.addEventListener('click', () => {
-		window.innerWidth > 767.98 ? (items += 5) : (items += 3)
-
-		const array = Array.from(document.querySelector('.device-list').children)
-		const visItems = array.slice(0, items)
-
-		visItems.forEach(el => el.classList.add('_visible'))
-
-		if (visItems.length === devices.length) {
-			showMore.style.display = 'none'
-		}
-	})
-}
-
-const paginationList = document.querySelector(
-	'.selection-pagination__list > span',
-)
-
-devices.forEach((device, index) => {
-	paginationList.insertAdjacentHTML(
-		'beforebegin',
-		createPaginationItem(index + 1),
-	)
-})
-
-function createPaginationItem(index) {
-	return `
-	<div class="selection-pagination__item">${index}</div>
-	`
-}
-
-let currentPage = 0
-
-const paginationItems = document.querySelectorAll('.selection-pagination__item')
-
-if (paginationItems.length > 0) {
-	paginationItems[paginationItems.length - 1].textContent = devices.length
-	paginationItems[paginationItems.length - 1].style.display = 'block'
-
-	paginationItems.forEach((item, index) => {
-		item.addEventListener('click', () => {
-			currentPage = index
-			changeCurrentPage()
-		})
-	})
-
-	function changeCurrentPage() {
-		paginationItems.forEach(item => {
-			item.classList.remove('_current')
-		})
-
-		paginationItems[currentPage].classList.add('_current')
-	}
-
-	changeCurrentPage()
+const advantagesBtns = document.querySelectorAll('.advantages__button')
+if (window.location.pathname === '/page-device-selection.html') {
+	advantagesBtns.forEach(btn => (btn.style.display = 'none'))
 }
 
 //====================================================================
@@ -309,103 +255,342 @@ const mobileModels = {
 		'iPhone XR',
 	],
 	samsung: [
-		'Samsung Galaxy Note 9',
-		'Samsung Galaxy Alpha(G850F)',
-		'Samsung Galaxy A8 Star',
-		'Samsung Galaxy A7 2018 (A750)',
-		'Samsung Galaxy A9 2018 (A920)',
-		'Samsung Galaxy Note 9',
-		'Samsung Galaxy Alpha(G850F)',
-		'Samsung Galaxy A8 Star',
-		'Samsung Galaxy A7 2018 (A750)',
-		'Samsung Galaxy A9 2018 (A920)',
-		'Samsung Galaxy Note 9',
-		'Samsung Galaxy Alpha(G850F)',
-		'Samsung Galaxy A8 Star',
-		'Samsung Galaxy A7 2018 (A750)',
-		'Samsung Galaxy A9 2018 (A920)',
-		'Samsung Galaxy Note 9',
-		'Samsung Galaxy Alpha(G850F)',
-		'Samsung Galaxy A8 Star',
-		'Samsung Galaxy A7 2018 (A750)',
-		'Samsung Galaxy A9 2018 (A920) ',
+		'Galaxy Note 9',
+		'Galaxy Alpha(G850F)',
+		'Galaxy A8 Star',
+		'Galaxy A7 2018 (A750)',
+		'Galaxy A9 2018 (A920)',
+		'Galaxy Note 9',
+		'Galaxy Alpha(G850F)',
+		'Galaxy A8 Star',
+		'Galaxy A7 2018 (A750)',
+		'Galaxy A9 2018 (A920)',
+		'Galaxy Note 9',
+		'Galaxy Alpha(G850F)',
+		'Galaxy A8 Star',
+		'Galaxy A7 2018 (A750)',
+		'Galaxy A9 2018 (A920)',
+		'Galaxy Note 9',
+		'Galaxy Alpha(G850F)',
+		'Galaxy A8 Star',
+		'Galaxy A7 2018 (A750)',
+		'Galaxy A9 2018 (A920) ',
 	],
 	xiaomi: [
-		'Xiaomi Redmi 3',
-		'Xiaomi Redmi Pro',
-		'Xiaomi Redmi 4',
-		'Xiaomi Redmi 4 Pro',
-		'Xiaomi Redmi 5',
-		'Xiaomi Redmi 5 Plus',
-		'Xiaomi Redmi Note',
-		'Xiaomi Redmi 3',
-		'Xiaomi Redmi Pro',
-		'Xiaomi Redmi 4',
-		'Xiaomi Redmi 4 Pro',
-		'Xiaomi Redmi 5',
-		'Xiaomi Redmi 5 Plus',
-		'Xiaomi Redmi Note',
+		'Redmi 3',
+		'Redmi Pro',
+		'Redmi 4',
+		'Redmi 4 Pro',
+		'Redmi 5',
+		'Redmi 5 Plus',
+		'Redmi Note',
+		'Redmi 3',
+		'Redmi Pro',
+		'Redmi 4',
+		'Redmi 4 Pro',
+		'Redmi 5',
+		'Redmi 5 Plus',
+		'Redmi Note',
 	],
 	huawei: [
-		'Huawei Honor 7A',
-		'Huawei Nova 2',
-		'Huawei Honor 8',
-		'Huawei Honor 9',
-		'Huawei Honor 7A',
-		'Huawei Nova 2',
-		'Huawei Honor 8',
-		'Huawei Honor 9',
-		'Huawei Honor 7A',
-		'Huawei Nova 2',
-		'Huawei Honor 8',
-		'Huawei Honor 9',
+		'Honor 7A',
+		'Nova 2',
+		'Honor 8',
+		'Honor 9',
+		'Honor 7A',
+		'Nova 2',
+		'Honor 8',
+		'Honor 9',
+		'Honor 7A',
+		'Nova 2',
+		'Honor 8',
+		'Honor 9',
 	],
-	other: [
-		'Ремонт телефонов Acer',
-		'Ремонт телефонов Asus',
-		'Ремонт телефонов LG',
-		'Ремонт телефонов ZTE',
-		'Ремонт телефонов HTC',
-		'Ремонт телефонов Meizu',
-	],
+	другие: ['Acer', 'Asus', 'LG', 'ZTE', 'HTC', 'Meizu'],
 }
 const tabletModels = {
 	ipad: ['iPad mini 3', 'iPad mini 4', 'iPad Pro', 'iPad Air'],
 	samsung: [
-		'SamsungGalaxy Tab 1',
-		'SamsungGalaxy Tab 2',
-		'SamsungGalaxy Tab 3',
-		'SamsungGalaxy Tab 4',
-		'SamsungGalaxy Tab 5',
-		'SamsungGalaxy Tab 6',
+		'Galaxy Tab 1',
+		'Galaxy Tab 2',
+		'Galaxy Tab 3',
+		'Galaxy Tab 4',
+		'Galaxy Tab 5',
+		'Galaxy Tab 6',
 	],
-	xiaomi: [
-		'Xiaomi Mi Pad',
-		'Xiaomi Mi Pad 2',
-		'Xiaomi Mi Pad 3',
-		'Xiaomi Mi Pad 4',
-		'Xiaomi Mi Pad 4 Plus',
-	],
+	xiaomi: ['Mi Pad', 'Mi Pad 2', 'Mi Pad 3', 'Mi Pad 4', 'Mi Pad 4 Plus'],
 
 	huawei: [
-		'HUAWEI Media Pad 7',
-		'HUAWEI Media Pad 8',
-		'HUAWEI Media Pad 9',
-		'HUAWEI Media Pad 10',
-		'HUAWEI Media Pad 11',
-		'HUAWEI Media Pad 12',
-		'HUAWEI Media Pad 13',
+		'Media Pad 7',
+		'Media Pad 8',
+		'Media Pad 9',
+		'Media Pad 10',
+		'Media Pad 11',
+		'Media Pad 12',
+		'Media Pad 13',
 	],
 
-	other: [
-		'Ремонт планшетов Asus',
-		'Ремонт планшетов Lenovo',
-		'Ремонт планшетов LG',
-		'Ремонт планшетов Dell',
-		'Ремонт планшетов HTC',
-		'Ремонт планшетов Sony',
-	],
+	другие: ['Asus', 'Lenovo', 'LG', 'Dell', 'HTC', 'Sony'],
 }
+
+//====================================================================
+// Панель поиска девайса
+let localStoragePack
+
+const searchButton = document.querySelector('#filter-btn')
+const searchType = document.querySelector('[data-search-type]')
+const searchBrand = document.querySelector('[data-search-brand]')
+const searchBrandList = document.querySelector('[data-search-brand-list]')
+const searchModel = document.querySelector('[data-search-model]')
+const searchModelList = document.querySelector('[data-search-model-list]')
+const searchBlocksFilter = document.querySelectorAll('.block-filter')
+const searchFilterItems = document.querySelectorAll('.block-filter__item')
+const repairItemWrapper = document.querySelector(
+	'.device-repair-main__description',
+)
+const breadCrumbsLink = document.querySelector('#bread-crumbs-link > span')
+
+if (searchButton) {
+	searchFilterItems.forEach(item => {
+		item.addEventListener('click', e => {
+			if (item.textContent === 'Мобильный телефон') {
+				const deviceNames = Object.keys(mobileModels)
+				deviceNames.forEach(name => {
+					createSearchDropdownList(searchBrandList, name)
+				})
+			}
+
+			if (item.textContent === 'Планшет') {
+				const deviceNames = Object.keys(tabletModels)
+				deviceNames.forEach(name => {
+					createSearchDropdownList(searchBrandList, name)
+				})
+			}
+		})
+	})
+
+	if (searchBlocksFilter) {
+		searchBlocksFilter.forEach(block => {
+			block.addEventListener('click', e => {
+				if (e.target.closest('.search-brand-list')) {
+					const brandName = e.target.textContent
+
+					if (searchType.textContent === 'Мобильный телефон') {
+						mobileModels[brandName].forEach(name => {
+							createSearchDropdownList(searchModelList, name)
+						})
+					}
+
+					if (searchType.textContent === 'Планшет') {
+						tabletModels[brandName].forEach(name => {
+							createSearchDropdownList(searchModelList, name)
+						})
+					}
+				}
+			})
+		})
+	}
+
+	function createSearchDropdownList(container, deviceName) {
+		container.insertAdjacentHTML(
+			'beforeend',
+			`
+		<div class="block-filter__item">${deviceName}</div>
+		`,
+		)
+	}
+
+	searchButton.addEventListener('click', e => {
+		e.preventDefault()
+
+		if (
+			!(
+				searchType.textContent === 'Выберите устройство' &&
+				searchBrand.textContent === 'Выберите марку' &&
+				searchModel.textContent === 'Выберите модель'
+			)
+		) {
+			// const typeDevice = searchDeviceType.split('-')[1]
+			const deviceSearch = {
+				searchType: searchType.textContent,
+				searchBrand: capitalizeFirstLetter(searchBrand.textContent),
+				searchModel: searchModel.textContent,
+			}
+			localStorage.setItem('device-search', JSON.stringify(deviceSearch))
+			window.document.location = './page-device-repair.html'
+		}
+	})
+}
+
+function capitalizeFirstLetter(string) {
+	return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
+const renderRepairDeviceItem = ({ searchType, searchBrand, searchModel }) => {
+	console.log(searchBrand)
+	const deviceName =
+		searchBrand === 'Другие' ? searchModel : `${searchBrand} ${searchModel}`
+	breadCrumbsLink.textContent = deviceName
+
+	createRepairDeviceItem(deviceName)
+}
+
+function createRepairDeviceItem(deviceName) {
+	repairItemWrapper.insertAdjacentHTML(
+		'beforeend',
+		`
+		<div class="device-repair-main__image">
+		<img src="img/models/mobile-model.jpg" alt="">
+	</div>
+	<h1 id="device-model-name" class="device-repair-main__model-name">Ремонт <span>${deviceName}</span></h1>
+	`,
+	)
+}
+
+if (window.document.location.pathname === '/page-device-repair.html') {
+	localStoragePack = JSON.parse(localStorage.getItem('device-search'))
+	renderRepairDeviceItem(localStoragePack)
+}
+
+//====================================================================
+
+const linkRepairItemsName = document.querySelectorAll(
+	'.dropdown__inner-nav-link > a',
+)
+const devices = document.querySelectorAll('.device-list__item')
+const paginationList = document.querySelector(
+	'.selection-pagination__list > span',
+)
+const showMore = document.querySelector('.button_show-more')
+
+linkRepairItemsName.forEach(link => {
+	link.addEventListener('click', e => {
+		e.preventDefault()
+		const typeDevice = link.closest('.dropdown__nav-item').id.split('-')[1]
+		const linkId = link.id.split('-')[1]
+		const deviceRepair = {
+			deviceType: typeDevice,
+			deviceBrand: linkId,
+		}
+		localStorage.setItem('device-repair', JSON.stringify(deviceRepair))
+		window.document.location = './page-device-selection.html'
+	})
+})
+
+const deviceList = document.querySelector('.device-list')
+
+const renderDeviceItem = ({ deviceType, deviceBrand }) => {
+	let devicesArray = []
+	if (deviceType === 'mobile' && mobileModels[deviceBrand]) {
+		// createPaginationList(mobileModels[deviceBrand])
+		showMoreItems(mobileModels[deviceBrand])
+
+		mobileModels[deviceBrand].forEach(device => {
+			createDeviceItem(device)
+		})
+	}
+
+	if (deviceType === 'tablet' && tabletModels[deviceBrand]) {
+		showMoreItems(tabletModels[deviceBrand])
+		// createPaginationList(tabletModels[deviceBrand])
+		tabletModels[deviceBrand].forEach(device => {
+			createDeviceItem(device)
+		})
+	}
+}
+
+function createDeviceItem(deviceName) {
+	deviceList.insertAdjacentHTML(
+		'beforeend',
+		`
+	<li class="device-list__item">
+	<article class="device-card">
+		<div class="device-card__image">
+			<img src="img/models/galaxy-a3.jpg" alt="">
+		</div>
+		<h2 class="device-card__model-name">${deviceName}</h2>
+		<a href="page-device-repair.html" class="device-card__link button">Ремонтировать</a>
+	</article>
+</li>
+	`,
+	)
+}
+
+if (window.document.location.pathname === '/page-device-selection.html') {
+	localStoragePack = JSON.parse(localStorage.getItem('device-repair'))
+	renderDeviceItem(localStoragePack)
+}
+
+//====================================================================
+// Показать еще
+
+function showMoreItems(devices) {
+	let items
+	let pageIndex = 0
+
+	window.innerWidth > 767.98 ? (items = 10) : (items = 6)
+
+	if (showMore) {
+		let currentPage = 0
+
+		const paginationItems = document.querySelectorAll(
+			'.selection-pagination__item',
+		)
+
+		// if (paginationItems.length > 0) {
+		// 	paginationItems[paginationItems.length - 1].textContent = devices.length
+		// 	paginationItems[paginationItems.length - 1].style.display = 'block'
+
+		// 	paginationItems.forEach((item, index) => {
+		// 		item.addEventListener('click', () => {
+		// 			currentPage = index
+		// 			pageIndex = index
+		// 			changeCurrentPage()
+		// 		})
+		// 	})
+
+		// 	function changeCurrentPage() {
+		// 		paginationItems.forEach(item => {
+		// 			item.classList.remove('_current')
+		// 		})
+
+		// 		paginationItems[currentPage].classList.add('_current')
+		// 	}
+
+		// 	changeCurrentPage()
+		// }
+		addNewItems(pageIndex, items, devices)
+	}
+}
+
+function addNewItems(pageIndex, items, devices) {
+	showMore.addEventListener('click', () => {
+		window.innerWidth > 767.98 ? (items += 5) : (items += 3)
+		const currentPageNum = pageIndex * items
+
+		const array = Array.from(document.querySelector('.device-list').children)
+		const visItems = array.slice(currentPageNum, items)
+
+		visItems.forEach(el => el.classList.add('_visible'))
+
+		if (visItems.length === devices.length) {
+			showMore.style.display = 'none'
+		}
+	})
+}
+
+// function createPaginationList(devices) {
+// 	devices.forEach((device, index) => {
+// 		paginationList.insertAdjacentHTML(
+// 			'beforebegin',
+// 			`
+// 				<div class="selection-pagination__item">${index + 1}</div>
+// 			`,
+// 		)
+// 	})
+// }
+
+//--------------------------------------------------------------------
 
 const stepCount = document.getElementById('step-count')
 const stepLength = document.getElementById('step-length')
@@ -532,3 +717,92 @@ function createFilterBlockModels(model) {
 </li>`
 	}
 }
+
+//====================================================================
+
+//====================================================================
+// Lazy Load
+// <picture>
+// 	<source type="image/webp" data-srcset="@img/1x1.png">
+// 	<img data-src="@img/services/appartment.jpg" src="@img/1x1.png" alt="Квартира">
+// </picture>
+// class lazy-image на обертку картинки
+
+const lazyImages = document.querySelectorAll(
+	'img[data-src],source[data-srcset]',
+)
+const loadMapBlocks = document.querySelectorAll('._load-map')
+
+const currentMapLoad = (maps, options) => {
+	const observer = new IntersectionObserver(trueCallback, options)
+	observer.disconnect()
+	document.addEventListener('scroll', trigScroll)
+	document.addEventListener('load', trigScroll)
+
+	function trueCallback(entries) {
+		entries.forEach(entry => {
+			const intersecting = entry.isIntersecting
+			const mapUrl = entry.target.dataset.map
+
+			if (intersecting) {
+				if (mapUrl && !entry.target.classList.contains('_loaded')) {
+					entry.target.insertAdjacentHTML(
+						'beforeend',
+						`<iframe src="${mapUrl}" width="100%" height="340" frameborder="0" </iframe>`,
+					)
+					entry.target.classList.add('_loaded')
+				}
+			}
+		})
+	}
+
+	function trigScroll() {
+		if (maps) {
+			maps.forEach(function (element) {
+				observer.observe(element)
+			})
+		}
+	}
+}
+
+const currentImageLoad = (images, options) => {
+	const observer = new IntersectionObserver(trueCallback, options)
+	observer.disconnect()
+	document.addEventListener('scroll', trigScroll)
+	document.addEventListener('load', trigScroll)
+
+	function trueCallback(entries) {
+		entries.forEach(entry => {
+			const intersecting = entry.isIntersecting
+
+			if (intersecting) {
+				if (entry.target.dataset.src) {
+					entry.target.src = entry.target.dataset.src
+					entry.target.removeAttribute('data-src')
+				} else if (entry.target.dataset.srcset) {
+					entry.target.src = entry.target.dataset.srcset
+					entry.target.removeAttribute('data-srcset')
+				}
+			}
+		})
+	}
+
+	function trigScroll() {
+		if (images) {
+			images.forEach(function (element) {
+				observer.observe(element)
+			})
+		}
+	}
+}
+
+currentImageLoad(lazyImages, {
+	rootMargin: '-20% 0% -20% 0%',
+	threshold: 0,
+})
+currentMapLoad(loadMapBlocks, {
+	rootMargin: '-20% 0% -20% 0%',
+	threshold: 0,
+})
+
+//====================================================================

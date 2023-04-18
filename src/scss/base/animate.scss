@@ -12,13 +12,15 @@
 }
 
 .shake-logo {
-	&:hover {
-		i {
-			-webkit-animation-name: shake;
-			-webkit-animation-duration: 1s;
-			-webkit-animation-iteration-count: infinite;
-			-webkit-animation-timing-function: linear;
-			-webkit-transform-origin: 50% 100%;
+	@media (any-hover: hover) {
+		&:hover {
+			i {
+				-webkit-animation-name: shake;
+				-webkit-animation-duration: 1s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-timing-function: linear;
+				-webkit-transform-origin: 50% 100%;
+			}
 		}
 	}
 }

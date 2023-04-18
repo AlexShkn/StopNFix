@@ -7,7 +7,13 @@
 		@include adaptiveValue('margin-bottom', 45, 20, 1);
 	}
 
-	iframe {
-		border-bottom: 5px solid var(--color-accent);
+	// .map__wrapper
+
+	&__wrapper {
+		min-height: 340px;
+
+		iframe {
+			border-bottom: 5px solid var(--color-accent);
+		}
 	}
 }

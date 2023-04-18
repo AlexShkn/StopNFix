@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="description" content="Ремонт телефонов и планшетов любой сложности">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230418171648">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- Header -->
+		<header class="header">
+			<div class="header__container">
+				<div class="header__content header-content">
+					<div class="icon-menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a id="stocks" href="index.html" class="menu__link link-hover">Главная</a>
+								</li>
+
+								<li class="menu__item">
+									<a id="about" href="page-about.html" class="menu__link link-hover">О нас</a>
+								</li>
+								<li class="menu__item">
+									<a id="reviews" href="page-filter.html" class="menu__link link-hover">Нужен ремонт?</a>
+								</li>
+								<li class="menu__item">
+									<a id="recommendations" href="page-recommendations.html" class="menu__link link-hover">Советы по ремонту</a>
+								</li>
+								<li class="menu__item">
+									<a id="contacts" href="page-contacts.html" class="menu__link link-hover">Контакты</a>
+								</li>
+							</ul>
+							<ul class="menu__social-list">
+								<li class="menu__social-item">
+									<a href="#" class="menu__social-link">
+										<svg class="icon">
+											<use xlink:href="img/sprite.svg#vk"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="menu__social-item">
+									<a href="#" class="menu__social-link">
+										<svg class="icon">
+											<use xlink:href="img/sprite.svg#twitter"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="menu__social-item">
+									<a href="#" class="menu__social-link">
+										<svg class="icon">
+											<use xlink:href="img/sprite.svg#instagram"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="menu__social-item">
+									<a href="#" class="menu__social-link">
+										<svg class="icon">
+											<use xlink:href="img/sprite.svg#fb"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="menu__address">г. Киев, ул. Ушинского,4 <span>ПН-ПТ с 10:00 до 20:00</span></div>
+					</div>
+					<button data-dropdown class="header__contacts-icon-button">
+						<svg class="icon">
+							<use xlink:href="img/sprite.svg#phone"></use>
+						</svg>
+					</button>
+					<div class="header__dropdown-contact dropdown">
+					</div>
+				</div>
+			</div>
+
+			<div class="header__body">
+				<div class="header__body-container">
+					<div data-da=".header__content, 767.98, 1" class="header__logo ">
+						<a href="index.html" class="shake-logo">
+							<span>Stop<i>N</i>Fix</span>
+							<div>Ремонт мобильных телефонов</div>
+						</a>
+					</div>
+					<div data-da=".menu__body, 767.98,first" class="header__dropdown dropdown__nav-list">
+						<div id="repair-mobile" class="dropdown__nav-item">
+							<button class="dropdown__nav-button">Ремонт мобильных телефонов</button>
+							<div class="dropdown__inner-nav-list">
+								<div class="dropdown__wrapper-list">
+									<svg class="icon dropdown-close">
+										<use xlink:href="img/sprite.svg#close"></use>
+									</svg>
+									<ul class="dropdown__body-list">
+										<li class="dropdown__inner-nav-link">
+											<a id="mobile-iphone" href="page-device-selection.html"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/iphone.webp" type="image/webp"><img src="img/brands/iphone.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт iPhone</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a id="mobile-htc" href="page-device-selection.html"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/htc.webp" type="image/webp"><img src="img/brands/htc.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт HTC</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a id="mobile-samsung" href="page-device-selection.html"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/samsung.webp" type="image/webp"><img src="img/brands/samsung.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов
+												Samsung Galaxy</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a id="mobile-nokia" href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/nokia.webp" type="image/webp"><img src="img/brands/nokia.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов Nokia</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/sony.webp" type="image/webp"><img src="img/brands/sony.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов Sony</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/motorola.webp" type="image/webp"><img src="img/brands/motorola.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов
+												Motorola</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/lg.webp" type="image/webp"><img src="img/brands/lg.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов LG</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/huawei.webp" type="image/webp"><img src="img/brands/huawei.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов HUAWEI</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/bb.webp" type="image/webp"><img src="img/brands/bb.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов
+												Blackberry</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/vertu.webp" type="image/webp"><img src="img/brands/vertu.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов Vertu</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/meizu.webp" type="image/webp"><img src="img/brands/meizu.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов Meizu</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/zte.webp" type="image/webp"><img src="img/brands/zte.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов ZTE</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/lenovo.webp" type="image/webp"><img src="img/brands/lenovo.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов Lenovo</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/asus.webp" type="image/webp"><img src="img/brands/asus.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов Asus</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/oneplus.webp" type="image/webp"><img src="img/brands/oneplus.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов OnePlus</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/google.webp" type="image/webp"><img src="img/brands/google.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов Google</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/vivo.webp" type="image/webp"><img src="img/brands/vivo.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов Vivo</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/xiaomi.webp" type="image/webp"><img src="img/brands/xiaomi.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов Xiaomi</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/acer.webp" type="image/webp"><img src="img/brands/acer.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт телефонов Acer</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div id="repair-tablet" class="dropdown__nav-item">
+							<button class="dropdown__nav-button">Ремонт планшетов</button>
+							<div class="dropdown__inner-nav-list">
+								<div class="dropdown__wrapper-list">
+									<svg class="icon dropdown-close">
+										<use xlink:href="img/sprite.svg#close"></use>
+									</svg>
+
+									<ul class="dropdown__body-list">
+										<li class="dropdown__inner-nav-link">
+											<a id="tablet-samsung" href="page-device-selection.html"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/samsung.webp" type="image/webp"><img src="img/brands/samsung.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт Samsung</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/htc.webp" type="image/webp"><img src="img/brands/htc.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт HTC</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/iphone.webp" type="image/webp"><img src="img/brands/iphone.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов
+												Samsung Galaxy</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/nokia.webp" type="image/webp"><img src="img/brands/nokia.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов Nokia</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/sony.webp" type="image/webp"><img src="img/brands/sony.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов Sony</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/motorola.webp" type="image/webp"><img src="img/brands/motorola.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов
+												Motorola</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/lg.webp" type="image/webp"><img src="img/brands/lg.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов LG</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/huawei.webp" type="image/webp"><img src="img/brands/huawei.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов HUAWEI</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/bb.webp" type="image/webp"><img src="img/brands/bb.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов
+												Blackberry</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/vertu.webp" type="image/webp"><img src="img/brands/vertu.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов Vertu</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/meizu.webp" type="image/webp"><img src="img/brands/meizu.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов Meizu</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/zte.webp" type="image/webp"><img src="img/brands/zte.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов ZTE</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/lenovo.webp" type="image/webp"><img src="img/brands/lenovo.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов Lenovo</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/asus.webp" type="image/webp"><img src="img/brands/asus.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов Asus</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/oneplus.webp" type="image/webp"><img src="img/brands/oneplus.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов OnePlus</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/google.webp" type="image/webp"><img src="img/brands/google.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов Google</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/vivo.webp" type="image/webp"><img src="img/brands/vivo.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов Vivo</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/xiaomi.webp" type="image/webp"><img src="img/brands/xiaomi.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов Xiaomi</span>
+										</li>
+										<li class="dropdown__inner-nav-link">
+											<a href="#"></a>
+											<div class="dropdown__image">
+												<picture><source srcset="img/brands/acer.webp" type="image/webp"><img src="img/brands/acer.png?_v=1681827408151" alt=""></picture>
+											</div>
+											<span class="dropdown__inner-nav-text">Ремонт планшетов Acer</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div data-da=".header__dropdown-contact,767.98,1" class="header__contacts header-contacts">
+						<svg class="icon">
+							<use xlink:href="img/sprite.svg#call-phone"></use>
+						</svg>
+						<div class="header-contacts__wrapper">
+							<ul class="header-contacts__list">
+								<li class="header-contacts__link ">
+									<a class="link-hover" href="tel:+">+38 (066) 452-16-85</a>
+								</li>
+								<li class="header-contacts__link">
+									<a class="link-hover" href="tel:+">+38 (099) 775-65-44</a>
+								</li>
+							</ul>
+							<div class="header-contacts__messengers">
+								<a href="#" class="header-contacts__image">
+									<img src="img/sprite-icons/viber.svg?_v=1681827408151" alt="">
+								</a>
+								<a href="#" class="header-contacts__image">
+									<img src="img/sprite-icons/wp-header.svg?_v=1681827408151" alt="">
+								</a>
+							</div>
+						</div>
+
+						<button data-btn-callback class="header-contacts__button">Записаться на ремонт</button>
+					</div>
+				</div>
+			</div>
+			<div class="header__container">
+				<div class="header__search header-search">
+					<button data-btn-filter class="header-search__button">Найти свое устройство</button>
+					<div data-da=".modal-filter__content,767.98,last" class="header-search filter">
+						<div class="filter__block block-filter">
+							<div class="block-filter__button">
+								<div class="block-filter__header">
+									<div data-search-type class="block-filter__type">Выберите устройство</div>
+									<div class="block-filter__icon"></div>
+								</div>
+							</div>
+							<div class="block-filter__dropdown">
+								<div class="block-filter__item">Мобильный телефон</div>
+								<div class="block-filter__item">Планшет</div>
+							</div>
+						</div>
+						<div class="filter__block block-filter">
+							<div class="block-filter__button">
+								<div class="block-filter__header">
+									<div data-search-brand class="block-filter__type">Выберите марку</div>
+									<div class="block-filter__icon"></div>
+								</div>
+							</div>
+							<div data-search-brand-list class="block-filter__dropdown search-brand-list">
+							</div>
+						</div>
+						<div class="filter__block block-filter">
+							<div class="block-filter__button">
+								<div class="block-filter__header">
+									<div data-search-model class="block-filter__type">Выберите модель</div>
+									<div class="block-filter__icon"></div>
+								</div>
+							</div>
+							<div data-search-model-list class="block-filter__dropdown">
+							</div>
+						</div>
+						<div class="filter__btn">
+							<button id="filter-btn">Найти</button>
+							<svg class="icon">
+								<use xlink:href="img/sprite.svg#arrow"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<!-- Hero-->
+			<section class="hero">
+				<div class="hero__container">
+					<div class="hero__body">
+						<div class="swiper hero-slider">
+							<div class="swiper-wrapper hero-slider__wrapper">
+								<div class="swiper-slide hero-slider__slide hero-slide hero-slide_mobile-bg">
+									<div class="hero-slide__descr">
+										<h1 class="hero-slide__title">Ремонт телефонов любой
+											сложности</h1>
+										<p class="hero-slide__text">Ваш любимый гаджет сломался? Вернем его к жизни
+											в кратчайшие сроки и по доступной цене!</p>
+										<div class="hero-slide__button">
+											<button data-btn-callback class="button button_callback">Записаться на ремонт</button>
+										</div>
+									</div>
+									<div class="hero-slide__image ">
+										<picture><source srcset="img/main-slider/girl.webp" type="image/webp"><img src="img/main-slider/girl.png?_v=1681827408151" alt="" aria-label=""></picture>
+										<span class="hero-slide__image--worm"></span>
+										<span class="hero-slide__image--n"></span>
+										<span class="hero-slide__image--circle"></span>
+										<span class="hero-slide__image--triangle"></span>
+										<span class="hero-slide__image--ring"></span>
+										<span class="hero-slide__image--triangle-blue"></span>
+										<span class="hero-slide__image--plus"></span>
+									</div>
+								</div>
+								<div class="swiper-slide hero-slider__slide hero-slide">
+									<div class="hero-slide__descr">
+										<h1 class="hero-slide__title">Ремонт телефонов любой
+											сложности</h1>
+										<p class="hero-slide__text">Ваш любимый гаджет сломался? Вернем его к жизни
+											в кратчайшие сроки и по доступной цене!</p>
+										<div class="hero-slide__button">
+											<button data-btn-callback class="button button_callback">Записаться на ремонт</button>
+										</div>
+
+									</div>
+									<div class="hero-slide__image ">
+										<picture><source srcset="img/main-slider/girl.webp" type="image/webp"><img src="img/main-slider/girl.png?_v=1681827408151" alt="" aria-label=""></picture>
+										<span class="hero-slide__image--worm"></span>
+										<span class="hero-slide__image--n"></span>
+										<span class="hero-slide__image--circle"></span>
+										<span class="hero-slide__image--triangle"></span>
+										<span class="hero-slide__image--ring"></span>
+										<span class="hero-slide__image--triangle-blue"></span>
+										<span class="hero-slide__image--plus"></span>
+									</div>
+								</div>
+								<div class="swiper-slide hero-slider__slide hero-slide">
+									<div class="hero-slide__descr">
+										<h1 class="hero-slide__title">Ремонт телефонов любой
+											сложности</h1>
+										<p class="hero-slide__text">Ваш любимый гаджет сломался? Вернем его к жизни
+											в кратчайшие сроки и по доступной цене!</p>
+										<div class="hero-slide__button">
+											<button data-btn-callback class="button button_callback">Записаться на
+												ремонт</button>
+										</div>
+
+									</div>
+									<div class="hero-slide__image ">
+										<picture><source srcset="img/main-slider/girl.webp" type="image/webp"><img src="img/main-slider/girl.png?_v=1681827408151" alt="" aria-label=""></picture>
+										<span class="hero-slide__image--worm"></span>
+										<span class="hero-slide__image--n"></span>
+										<span class="hero-slide__image--circle"></span>
+										<span class="hero-slide__image--triangle"></span>
+										<span class="hero-slide__image--ring"></span>
+										<span class="hero-slide__image--triangle-blue"></span>
+										<span class="hero-slide__image--plus"></span>
+									</div>
+								</div>
+							</div>
+							<div class="hero-slider__pagination">
+								<span data-hero-bullet-start class="hero-slider__bullet"></span>
+								<span data-hero-bullet-middle class="hero-slider__bullet"></span>
+								<span data-hero-bullet-end class="hero-slider__bullet"></span>
+							</div>
+						</div>
+
+					</div>
+					<div class="hero-slide__button--mobile">
+						<button data-btn-callback class="button button_callback">Записаться на ремонт</button>
+					</div>
+
+
+				</div>
+			</section>
+			<!-- Steps-->
+			<section class="steps">
+				<div class="steps__container">
+					<h2 class="steps__title section-title">Ремонт вашего гаджета всего за 3 шага</h2>
+					<div class="steps__row">
+						<div class="steps__item">
+							<span class="steps__arrow">
+								<span class="steps__dott"></span>
+								<span class="steps__dott"></span>
+								<span class="steps__dott"></span>
+								<span class="steps__dott"></span>
+							</span>
+							<div class="steps__top">
+								<span class="steps__number">1</span>
+								<div class="steps__image">
+									<picture><source srcset="img/steps/1-step.webp" type="image/webp"><img src="img/steps/1-step.png?_v=1681827408151" alt=""></picture>
+								</div>
+							</div>
+							<p class="steps__descr">Укaжитe уcтpoйcтвo, кoтopoe нужнo oтpeмoнтиpoвaть</p>
+						</div>
+
+
+						<div class="steps__item">
+							<span class="steps__arrow">
+								<span class="steps__dott"></span>
+								<span class="steps__dott"></span>
+								<span class="steps__dott"></span>
+								<span class="steps__dott"></span>
+							</span>
+							<div class="steps__top">
+								<span class="steps__number">2</span>
+								<div class="steps__image">
+									<picture><source srcset="img/steps/2-step.webp" type="image/webp"><img src="img/steps/2-step.png?_v=1681827408151" alt=""></picture>
+								</div>
+							</div>
+							<p class="steps__descr"><span data-btn-callback>Запишитесь</span> на ремонт в StоpNFix в удобное для вас время,
+								мастер будет вас ждать</p>
+						</div>
+
+
+						<div class="steps__item">
+							<div class="steps__top">
+								<span class="steps__number">3</span>
+								<div class="steps__image">
+									<picture><source srcset="img/steps/3-step.webp" type="image/webp"><img src="img/steps/3-step.png?_v=1681827408151" alt=""></picture>
+								</div>
+							</div>
+							<p class="steps__descr">После определения причины поломки, гаджет будет в кротчайшие сроки отремонтирован</p>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- Advantages-->
+			<section class="advantages">
+				<div class="advantages__container">
+					<h2 class="advantages__title section-title">Haши пpeимущecтвa</h2>
+					<h3 class="advantages__subtitle">Сотни клиентов ежедневно выбирают StоpNFix</h3>
+					<ul class="advantages__row">
+						<li class="advantages__item">
+							<div class="advantages__image">
+								<img src="img/advantages/1-advantages.svg?_v=1681827408151" alt="">
+							</div>
+							<p class="advantages__description">Гибкие цены
+								и бесплатная диагностика</p>
+						</li>
+						<li class="advantages__item">
+							<div class="advantages__image">
+								<img src="img/advantages/2-advantages.svg?_v=1681827408151" alt="">
+							</div>
+							<p class="advantages__description">Целый склад запасных
+								частей в наличии</p>
+						</li>
+						<li class="advantages__item">
+							<div class="advantages__image">
+								<img src="img/advantages/3-advantages.svg?_v=1681827408151" alt="">
+							</div>
+							<p class="advantages__description">Самый быстрый
+								ремонт в Киеве</p>
+						</li>
+						<li class="advantages__item">
+							<div class="advantages__image">
+								<img src="img/advantages/4-advantages.svg?_v=1681827408151" alt="">
+							</div>
+							<p class="advantages__description">Даем гарантию на
+								свою работу</p>
+						</li>
+					</ul>
+					<div class="advantages__buttons">
+						<button data-btn-callback class="advantages__button button button_callback">Записаться на
+							ремонт</button>
+						<button class="advantages__button button button_white">Узнать стоимость</button>
+					</div>
+				</div>
+			</section>
+			<!-- Info-->
+			<div class="info">
+				<div class="info__container">
+					<div data-tabs data-tabs-animate="500" class="tabs">
+						<nav data-tabs-titles class="tabs__navigation">
+							<button type="submit" class="tabs__title _tab-active">Акции</button>
+							<button type="submit" class="tabs__title">Новости блога</button>
+						</nav>
+						<div data-tabs-body class="tabs__content">
+							<div class="tabs__body info-stocks">
+								<div class="info-stocks__content">
+									<article class="info-stocks__card">
+										<div class="info-stocks__image lazy-image">
+											<picture><source data-srcset="img/1x1.webp" type="image/webp"><img data-src="img/stocks/1-stocks.jpg?_v=1681827408151" src="img/1x1.png?_v=1681827408151" alt="Ремонт телефона"></picture>
+											</picture>
+										</div>
+										<h3 class="info-stocks__descr">
+											<a href="#">Скидка на ремонт второго телефона -20%</a>
+										</h3>
+									</article>
+									<article class="info-stocks__card">
+										<div class="info-stocks__image lazy-image">
+											<picture><source data-srcset="img/1x1.webp" type="image/webp"><img data-src="img/stocks/2-stocks.jpg?_v=1681827408151" src="img/1x1.png?_v=1681827408151" alt="Ация"></picture>
+											</picture>
+										</div>
+										<h3 class="info-stocks__descr">
+											<a href="#">Новогодняя акция на ремонт мобильных телефонов!</a>
+										</h3>
+									</article>
+									<article class="info-stocks__card">
+										<div class="info-stocks__image lazy-image">
+											<picture><source data-srcset="img/1x1.webp" type="image/webp"><img data-src="img/stocks/3-stocks.jpg?_v=1681827408151" src="img/1x1.png?_v=1681827408151" alt="Диагностика планшета"></picture>
+											</picture>
+										</div>
+										<h3 class="info-stocks__descr">
+											<a href="#">Диагностика планшета
+												в подарок!</a>
+										</h3>
+									</article>
+								</div>
+								<a href="#" class="info-stocks__link button">Все акции</a>
+							</div>
+							<div class="tabs__body">
+								<div class="tabs__body info-stocks">
+									<div class="info-stocks__content">
+										<article class="info-stocks__card">
+											<div class="info-stocks__image">
+												<picture><source srcset="img/stocks/2-stocks.webp" type="image/webp"><img src="img/stocks/2-stocks.jpg?_v=1681827408151" alt=""></picture>
+											</div>
+											<h3 class="info-stocks__descr">
+												<a href="#">Новогодняя акция на ремонт
+													мобильных телефонов!</a>
+											</h3>
+										</article>
+										<article class="info-stocks__card">
+											<div class="info-stocks__image">
+												<picture><source srcset="img/stocks/1-stocks.webp" type="image/webp"><img src="img/stocks/1-stocks.jpg?_v=1681827408151" alt=""></picture>
+											</div>
+											<h3 class="info-stocks__descr">
+												<a href="#">Скидка на ремонт второго телефона -20%</a>
+											</h3>
+										</article>
+										<article class="info-stocks__card">
+											<div class="info-stocks__image">
+												<picture><source srcset="img/stocks/3-stocks.webp" type="image/webp"><img src="img/stocks/3-stocks.jpg?_v=1681827408151" alt=""></picture>
+											</div>
+											<h3 class="info-stocks__descr">
+												<a href="#">Диагностика планшета
+													в подарок!</a>
+											</h3>
+										</article>
+									</div>
+									<a href="#" class="info-stocks__link button">Все новости</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Map-->
+			<section class="map ">
+				<h2 class="map__title section-title">Как нас найти</h2>
+				<div class="map__wrapper _load-map lazy-map" data-map="https://yandex.ru/map-widget/v1/?um=constructor%3A0bd1d398f39e86ee48b0f058f01202b2a0ef4f62e3ad1dff692152c04b2e28b5&amp;source=constructor">
+				</div>
+			</section>
+
+		</main>
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__buttons">
+					<button data-btn-callback class="footer__button button button_callback">Записаться на
+						ремонт</button>
+					<button data-btn-filter class="footer__button button button_white">Найти свое устройство</button>
+				</div>
+				<div class="footer__content">
+					<div class="footer__contacts footer-contacts">
+						<div class="footer-contacts__top">
+							<a href="#" class="footer-contacts__logo">
+								<picture><source srcset="img/footer-logo.webp" type="image/webp"><img src="img/footer-logo.png?_v=1681827408151" alt="logo"></picture>
+								<span>Ремонт мобильных телефонов</span>
+							</a>
+							<div class="footer-contacts__items">
+								<a data-da=".footer-nav,767.98,last" href="mailto:info@stopnfix.com" class="footer-contacts__item">
+									<svg class="icon">
+										<use xlink:href="img/sprite.svg#mail"></use>
+									</svg>
+									info@stopnfix.com</a>
+								<address class="footer-contacts__item">
+									<svg class="icon">
+										<use xlink:href="img/sprite.svg#locate"></use>
+									</svg>
+									г. Киев, улица Ушинского, 4
+								</address>
+							</div>
+						</div>
+
+						<div class="footer-contacts__callback footer-callback">
+							<svg class="icon">
+								<use xlink:href="img/sprite.svg#phone"></use>
+							</svg>
+							<div class="footer-callback__wrapper">
+								<ul class="footer-callback__list">
+									<li class="footer-callback__link ">
+										<a class="link-hover" href="tel:+">+38 (066) 452-16-85</a>
+									</li>
+									<li class="footer-callback__link">
+										<a class="link-hover" href="tel:+">+38 (099) 775-65-44</a>
+									</li>
+								</ul>
+								<div class="footer-callback__messengers">
+									<a href="#" class="footer-callback__image">
+										<img src="img/sprite-icons/viber.svg?_v=1681827408151" alt="">
+									</a>
+									<a href="#" class="footer-callback__image">
+										<img src="img/sprite-icons/wp-header.svg?_v=1681827408151" alt="">
+									</a>
+								</div>
+							</div>
+
+							<button data-btn-callback class="footer-callback__button">Заказать звонок с сайта</button>
+						</div>
+					</div>
+					<div class="footer__nav footer-nav">
+						<div class="footer-nav__column">
+							<h3 class="footer-nav__heading">Информация</h3>
+							<a href="#" class="footer-nav__link link-hover">Акции</a>
+							<a href="#" class="footer-nav__link link-hover">Советы по ремонту</a>
+							<a href="#" class="footer-nav__link link-hover">О компании</a>
+							<a href="#" class="footer-nav__link link-hover">Отзывы</a>
+							<a href="#" class="footer-nav__link link-hover">Контакты</a>
+						</div>
+						<div class="footer-nav__column">
+							<h3 class="footer-nav__heading">Услуги</h3>
+							<a href="#" class="footer-nav__link link-hover">Ремонт мобильных телефонов</a>
+							<a href="#" class="footer-nav__link link-hover">Ремонт планшетов</a>
+							<ul data-da=".footer-nav,767.98,first" class="footer-nav__social-list">
+								<li class="footer-nav__social-item">
+									<a href="#" class="footer-nav__social-link">
+										<svg class="icon">
+											<use xlink:href="img/sprite.svg#vk"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="footer-nav__social-item">
+									<a href="#" class="footer-nav__social-link">
+										<svg class="icon">
+											<use xlink:href="img/sprite.svg#twitter"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="footer-nav__social-item">
+									<a href="#" class="footer-nav__social-link">
+										<svg class="icon">
+											<use xlink:href="img/sprite.svg#instagram"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="footer-nav__social-item">
+									<a href="#" class="footer-nav__social-link">
+										<svg class="icon">
+											<use xlink:href="img/sprite.svg#fb"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<span class="footer__copyright">© Сервис по ремонту StopNFix. 2018.</span>
+			</div>
+		</footer>
+
+
+		<div data-modal-filter data-modal class="modal-filter fade">
+			<div class="modal-filter__dialog">
+				<div data-modal-content class="modal-filter__content ">
+					<a data-modal-close href="#" class="modal-filter__close">
+						<svg class="icon">
+							<use xlink:href="img/sprite.svg#close"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- ==================================================================== -->
+
+
+		<div data-modal-callback data-modal class="modal-callback fade">
+			<div class="modal-callback__dialog">
+				<div data-modal-content class="modal-callback__content">
+					<a data-btn-close href="#" class="modal-callback__close">
+						<svg class="icon">
+							<use xlink:href="img/sprite.svg#close">
+							</use>
+						</svg>
+					</a>
+					<h3 class="modal-callback__title">Введите Ваши контактные данные</h3>
+					<form class="modal-callback-form">
+						<label class="modal-callback-form__label">Ваше имя:*</label>
+						<input data-name-field type="text" name="name" class="modal-callback-form__input" placeholder="Ваше имя">
+						<label class="modal-callback__label">Ваш телефон: *</label>
+						<input data-phone-field autocomplete="off" type="tel" name="phone" data-value="Телефон" required class="modal-callback-form__input" placeholder="+7(___).___.__.__">
+						<button data-btn-thanks data-btn-redirect type="submit" class="modal-callback-form__button button">Записаться на
+							ремонт</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- ==================================================================== -->
+
+		<div data-modal-thanks data-modal class="modal-thanks fade">
+			<div class="modal-thanks__dialog">
+				<div data-modal-content class="modal-thanks__content">
+					<a data-modal-close href="#" class="modal-thanks__close">
+						<svg class="icon">
+							<use xlink:href="img/sprite.svg#close"></use>
+						</svg>
+					</a>
+					<h3 class="modal-thanks__title">Спасибо!</h3>
+					<h3 class="modal-thanks__subtitle">Мастер свяжется с Вами в самое ближайшее время.</h3>
+					<button data-btn-close class="modal-thanks__button button">ОК</button>
+				</div>
+			</div>
+		</div>
+
+		<button id="back-to-top-btn">
+			<svg class="icon">
+				<use xlink:href="img/sprite.svg#double-arrow-up"></use>
+			</svg>
+		</button>
+		<div class="preloader">
+			<div class="sk-chase">
+				<div class="sk-chase-dot"></div>
+				<div class="sk-chase-dot"></div>
+				<div class="sk-chase-dot"></div>
+				<div class="sk-chase-dot"></div>
+				<div class="sk-chase-dot"></div>
+				<div class="sk-chase-dot"></div>
+			</div>
+		</div>
+
+	</div>
+	<script src="js/app.min.js?_v=20230418171648"></script>
+</body>
+
+</html>

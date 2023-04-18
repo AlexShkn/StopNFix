@@ -82,15 +82,14 @@ function filedMask(inputs) {
 //====================================================================
 // Активный пункт меню
 const navLinks = document.querySelectorAll('.menu__link')
-// const locateName = window.location.pathname.replace('/', '').split('/')[1]
-const locateName = window.location.pathname.replace('/', '')
-const pageName = document.querySelector('.bread-crumbs__container > span')
+const url = window.location.href
+const locateName = url.substring(url.lastIndexOf('/') + 1)
 
 function currentNavLinkChange() {
-	if (pageName) {
-		if (locateName === 'page-device-repair.html') {
-			document.title = pageName.textContent
-		}
+	const modelName = JSON.parse(localStorage.getItem('device-search'))
+
+	if (locateName === 'page-device-repair.html') {
+		document.title = `Ремонт ${modelName.searchBrand} ${modelName.searchModel}`
 	}
 
 	navLinks.forEach(link => {
@@ -109,10 +108,7 @@ currentNavLinkChange()
 const header = document.querySelector('.header')
 
 function headerShadowChange() {
-	if (
-		window.location.pathname !== '/index.html' &&
-		window.location.pathname !== '/page-filter.html'
-	) {
+	if (locateName !== 'index.html' && locateName !== 'page-filter.html') {
 		header.classList.add('header-shadow')
 	} else {
 		header.classList.remove('header-shadow')
@@ -427,7 +423,6 @@ function capitalizeFirstLetter(string) {
 }
 
 const renderRepairDeviceItem = ({ searchType, searchBrand, searchModel }) => {
-	console.log(searchBrand)
 	const deviceName =
 		searchBrand === 'Другие' ? searchModel : `${searchBrand} ${searchModel}`
 	breadCrumbsLink.textContent = deviceName
@@ -447,7 +442,7 @@ function createRepairDeviceItem(deviceName) {
 	)
 }
 
-if (window.document.location.pathname === '/page-device-repair.html') {
+if (locateName === 'page-device-repair.html') {
 	localStoragePack = JSON.parse(localStorage.getItem('device-search'))
 	renderRepairDeviceItem(localStoragePack)
 }
@@ -457,10 +452,7 @@ if (window.document.location.pathname === '/page-device-repair.html') {
 const linkRepairItemsName = document.querySelectorAll(
 	'.dropdown__inner-nav-link > a',
 )
-const devices = document.querySelectorAll('.device-list__item')
-const paginationList = document.querySelector(
-	'.selection-pagination__list > span',
-)
+
 const showMore = document.querySelector('.button_show-more')
 
 linkRepairItemsName.forEach(link => {
@@ -480,7 +472,6 @@ linkRepairItemsName.forEach(link => {
 const deviceList = document.querySelector('.device-list')
 
 const renderDeviceItem = ({ deviceType, deviceBrand }) => {
-	let devicesArray = []
 	if (deviceType === 'mobile' && mobileModels[deviceBrand]) {
 		// createPaginationList(mobileModels[deviceBrand])
 		showMoreItems(mobileModels[deviceBrand])
@@ -516,7 +507,7 @@ function createDeviceItem(deviceName) {
 	)
 }
 
-if (window.document.location.pathname === '/page-device-selection.html') {
+if (locateName === 'page-device-selection.html') {
 	localStoragePack = JSON.parse(localStorage.getItem('device-repair'))
 	renderDeviceItem(localStoragePack)
 }
